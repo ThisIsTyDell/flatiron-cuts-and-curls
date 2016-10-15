@@ -1,3 +1,24 @@
 CUTS N CURLS RAILS APP NOTES
 
 Domain - Hair Salon/Barbershop - Can be adapted to suit both
+
+Models
+------
+USER
+  has a name
+  has a username
+  has a password
+    password is encrypted
+  
+  has a role
+    client
+    hair stylist
+    manager
+    admin
+
+  has many appointments
+
+APPOINTMENT
+  has a time
+  has a date
+  belongs to a user
