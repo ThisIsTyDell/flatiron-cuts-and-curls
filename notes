@@ -9,16 +9,29 @@ USER
   has a username
   has a password
     password is encrypted
-  
-  has a role
-    client
-    hair stylist
-    manager
-    admin
-
   has many appointments
-
+  (belongs to current_appointment, classname "appointment")
+  has a role - client and employee on same table using a has_many | belongs_to - Self Join Table
+    client
+    employee
+      stylist
+      manager
+      admin
+  
 APPOINTMENT
   has a time
   has a date
   belongs to a user
+  has many AppointmentServices
+  has many Services through AppointmentServices
+
+CATEGORY
+  has_many Services
+
+SERVICES
+  has many AppointmentServices
+  belongs to Category
+
+APPOINTMENT_SERVICES - Join Table
+  belongs to appointment
+  belongs to Service
