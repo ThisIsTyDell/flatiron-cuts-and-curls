@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   def have_stylist?
     if self.stylist_id == 1
-      return "You do not have a stylist"
+      false
     else
       true
     end

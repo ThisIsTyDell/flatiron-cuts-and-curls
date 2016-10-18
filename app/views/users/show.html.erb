@@ -1,2 +1,7 @@
 <h1><%= @user.name %></h1>
-Your stylist is <%= @user.stylist.name %>.
+  <% if @user.have_stylist? %>
+    Your stylist is <%= @user.stylist.name %>. 
+  <% else %>
+    You do not have a stylist yet.
+  <% end %>
+  You may book <%= @user.have_stylist? ? @user.stylist.name + ', your' : 'a' %> stylist, by clicking Make Appointment.
