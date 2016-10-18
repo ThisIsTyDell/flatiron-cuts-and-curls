@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018035516) do
+ActiveRecord::Schema.define(version: 20161018045017) do
 
   create_table "appointment_services", force: :cascade do |t|
     t.integer  "appointment_id"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20161018035516) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "stylist_id"
+    t.integer  "stylist_id",             default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["stylist_id"], name: "index_users_on_stylist_id"
