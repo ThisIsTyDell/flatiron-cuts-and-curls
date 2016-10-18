@@ -10,7 +10,7 @@ USER
   has a password
     password is encrypted
   has many appointments
-  (belongs to current_appointment, classname "appointment")
+  (belongs to current_appointment, classname "appointment") - maybe
   has a role - client and employee on same table using a has_many | belongs_to - Self Join Table
     client
     employee
@@ -21,6 +21,7 @@ USER
 APPOINTMENT
   has a time
   has a date
+  (has a total price) - maybe
   belongs to a user
   has many AppointmentServices
   has many Services through AppointmentServices
@@ -29,6 +30,7 @@ CATEGORY
   has_many Services
 
 SERVICES
+  has a price
   has many AppointmentServices
   belongs to Category
 
