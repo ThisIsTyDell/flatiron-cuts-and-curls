@@ -12,8 +12,8 @@ USER
   has many appointments
   (belongs to current_appointment, classname "appointment") - maybe
   has a role - client and employee on same table using a has_many | belongs_to - Self Join Table
-    client
-    employee
+    customer
+    employee - roles
       stylist
       manager
       admin
