@@ -5,8 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get '/users' => 'users#index'
-  get '/users/:id' => 'users#show' 
+  resources :users, only: [:index, :show]
 
   resources :appointments
 end
