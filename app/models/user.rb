@@ -6,6 +6,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :appointments
+  has_many :time_slots, through: :appointments
+  has_many :appointment_services, through: :appointments
+  has_many :services, through: :appointment_services
   has_many :customers, class_name: "User", foreign_key: "stylist_id"
   belongs_to :stylist, class_name: "User"
 
