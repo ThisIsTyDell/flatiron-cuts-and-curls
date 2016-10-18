@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.where("id > 1")
   end
 end
