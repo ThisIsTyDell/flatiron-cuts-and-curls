@@ -26,7 +26,9 @@ class AppointmentsController < ApplicationController
 
   def destroy
     @appointment = Appointment.find(params[:id])
+    @appointment.time_slot.make_available
     @appointment.destroy
+
     redirect_to appointments_path
   end
 

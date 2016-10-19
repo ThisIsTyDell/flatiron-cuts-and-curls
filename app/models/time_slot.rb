@@ -10,4 +10,9 @@ class TimeSlot < ActiveRecord::Base
     self.booked = true
     self.save
   end
+
+  def make_available
+    self.booked = false
+    self.save
+  end
 end
