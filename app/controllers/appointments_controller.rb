@@ -11,7 +11,6 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
-    @services = @appointment.services.all
   end
 
   def create
@@ -23,6 +22,12 @@ class AppointmentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @appointment = Appointment.find(params[:id])
+    @appointment.destroy
+    redirect_to appointments_path
   end
 
   private
