@@ -1,1 +1,6 @@
-index.html.erb
+You currently have <%= @appointments.count %> appointment.<br>
+<% @appointments.each do |a| %>
+  <%= link_to a.dateandtime, a %>
+<% end %>
+
+<p><%= link_to 'Schedule New Appointment', new_appointment_path %></p>
