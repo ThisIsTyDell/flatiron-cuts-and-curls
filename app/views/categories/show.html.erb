@@ -3,3 +3,4 @@
 <% @category.services.each do |service| %>
   <div><%= service.title %> - <%= service.price %></div>
 <% end %>
+<%= link_to "Add New Service", new_service_path if current_user.admin? || current_user.employee? %>
