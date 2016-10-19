@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
 
@@ -9,6 +10,7 @@ class AppointmentsController < ApplicationController
   end
 
   def create
+    raise params.inspect
     available = Appointment.new(appointment_params).available?
     if available
       redirect_to user_path(user)

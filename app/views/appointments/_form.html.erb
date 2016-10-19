@@ -1,1 +1,5 @@
-_form.html.erb
+<%= form_for(appointment) do |f| %>
+  <%= f.label 'Appointment Day and Time' %>
+  <%= f.select :time_slot_id, TimeSlot.all.collect { |t| [ t.name + " " + t.time, t.id ] } %>
+  <%= f.submit 'Book Appointment' %>
+<% end %>
