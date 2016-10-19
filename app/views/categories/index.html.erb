@@ -1,3 +1,5 @@
 <%= @categories.each do |category| %>
-  <div><%= category.title %></div>
+  <div><%= link_to category.title, category_path(category) %> - <%= link_to "Edit", edit_category_path(category) if current_user.admin? || current_user.employee? %></li></div>
 <% end %>
+
+<div><%= link_to "New Category", new_category_path %></div>
