@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :update]
 
   resources :appointments
+
+  resources :services
 end
