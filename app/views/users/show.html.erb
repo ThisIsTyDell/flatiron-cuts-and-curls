@@ -1,7 +1,8 @@
 <h1><%= @user.name %></h1>
+<p><%= link_to "Book Appointment", new_appointment_path %></p>
 <% if @user.have_stylist? %>
   Your stylist is <%= @user.stylist.name %>. 
 <% else %>
   You do not have a stylist yet.
 <% end %>
-You may book <%= @user.have_stylist? ? @user.stylist.name + ', your' : 'a' %> stylist, by clicking Make Appointment.
+You may book <%= @user.have_stylist? ? @user.stylist.name + ', your' : 'a' %> stylist, by clicking <%= link_to "Book Appointment", new_appointment_path %>.
