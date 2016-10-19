@@ -9,6 +9,11 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
   end
 
+  def show
+    @appointment = Appointment.find(params[:id])
+    @services = @appointment.services.all
+  end
+
   def create
     time_slot = TimeSlot.find(appointment_params[:time_slot_id])
     appointment = Appointment.new(appointment_params)
