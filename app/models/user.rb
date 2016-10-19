@@ -19,4 +19,8 @@ class User < ApplicationRecord
       true
     end
   end
+
+  def self.employees
+    where(role: 1)
+  end
 end
