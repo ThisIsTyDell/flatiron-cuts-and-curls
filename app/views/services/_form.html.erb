@@ -5,8 +5,9 @@
   <%= f.number_field :price %><br>
   <%= f.label :'Select Category' %>
   <%= f.collection_select(:category_id, Category.all, :id, :title, {include_blank: true}) %><br>
-  <%= f.label :'or Create New Category' %>
-  <%= f.fields_for :category, service.build_category do |category_field| %>
+  
+  <%= f.fields_for :category do |category_field| %>
+    <%= category_field.label :'or Create New Category' %>
     <%= category_field.text_field :title %>
   <% end %>
   <%= f.submit %>
