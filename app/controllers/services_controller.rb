@@ -14,14 +14,11 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     if @service.save
-      redirect_to service_path(@service.id)
+      redirect_to services_path
     else
       render :new
     end
   end
-
-  def show
-  end  
 
   def edit
 

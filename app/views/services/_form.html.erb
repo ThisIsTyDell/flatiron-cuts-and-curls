@@ -7,3 +7,5 @@
   <%= f.collection_select(:category_id, Category.all, :id, :title, {include_blank: true}) %><br>
   <%= f.submit %>
 <% end %>
+
+<%= link_to 'Cancel', services_path %>
