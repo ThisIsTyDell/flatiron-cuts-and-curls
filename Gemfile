@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Devise for Auth
 gem 'devise'
 
+#Use Pundit for Auth
+gem 'pundit'
+
 # Use Rails_Admin for Admin panel
 gem 'rails_admin'
 
