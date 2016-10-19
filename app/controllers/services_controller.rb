@@ -10,7 +10,12 @@ class ServicesController < ApplicationController
   end
 
   def create
-
+    @service = Service.new(service_params)
+    if @service.save
+      redirect_to service_path(@service)
+    else
+      render :new
+    end
   end
 
   def edit
