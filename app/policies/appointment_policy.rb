@@ -21,14 +21,14 @@ class AppointmentPolicy < ApplicationPolicy
   end
 
   def show?
-    user.admin? || record == user
+    user.admin? || user.employee? || record.try(:user) == user
   end
 
   def update?
-    user.admin? 
+    user.admin? || user.employee? || record.try(:user) == user
   end
 
   def destroy?
-    user.admin? && (record != user)
+    user.admin? || user.employee? || record.try(:user) == user
   end
 end

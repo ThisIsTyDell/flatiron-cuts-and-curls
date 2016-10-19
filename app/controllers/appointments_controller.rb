@@ -3,7 +3,6 @@ class AppointmentsController < ApplicationController
 
   def index
     @appointments = policy_scope(Appointment)
-    authorize User
   end
 
   def new
@@ -12,7 +11,7 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
-    authorize User
+    authorize @appointment
   end
 
   def create
