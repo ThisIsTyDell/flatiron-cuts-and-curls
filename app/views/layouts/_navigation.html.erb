@@ -3,7 +3,8 @@
       <li> <%= link_to "Home", :root %> </li>
       <li><%= link_to "Services", services_path %></li>
       <% if current_user %>
-        <li><%= "Signed in as #{current_user.email}" %></li>
+        <li><%= link_to "Profile", user_path(current_user) %></li>
+        <li><%= link_to "Appointments", appointments_path %></li>
         <li><%= link_to "Book Appointment", new_appointment_path %></li>
         <li><%= link_to "Admin Settings", dashboard_path if current_user.admin? %></li>
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
