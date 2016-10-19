@@ -7,4 +7,8 @@ class Service < ApplicationRecord
     category = Category.find_or_create_by(category_attribute)
     self.category = category
   end
+
+  def details
+    "#{self.title} - #{self.price}"
+  end
 end
