@@ -10,7 +10,11 @@ class AppointmentsController < ApplicationController
 
   def create
     available = Appointment.new(appointment_params).available?
-    available ? redirect_to user_path(user) : render :new
+    if available
+      redirect_to user_path(user)
+    else
+      render :new
+    end
   end
 
   private
