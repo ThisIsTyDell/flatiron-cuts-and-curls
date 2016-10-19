@@ -23,6 +23,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    authorize @category
   end
 
   def update

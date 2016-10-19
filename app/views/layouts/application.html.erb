@@ -12,7 +12,7 @@
     <%= render 'layouts/navigation' %>
     <h1>Cuts N Curls</h1>
     <h2>Hair Salon</h2>
-    <%= render 'users/stylist_form' unless current_user.have_stylist? if current_user %>
+    <%= render 'users/stylist_form' unless current_user.have_stylist? if current_user && ! current_user.admin? %>
     <%= render 'layouts/messages' %>
     <%= yield %>
   </body>
