@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where("id > 1")
+    authorize User
   end
 
   def show
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    authorize @user
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
