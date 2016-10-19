@@ -14,11 +14,10 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    time_slot = TimeSlot.find(appointment_params[:time_slot_id])
     appointment = Appointment.new(appointment_params)
     if appointment.save
-      time_slot.book
-      redirect_to user_path(current_user)
+      appointment.time_slot.book
+      redirect_to appointments_path
     else
       render :new
     end
