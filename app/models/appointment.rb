@@ -9,12 +9,6 @@ class Appointment < ActiveRecord::Base
     "#{self.time_slot.name} - #{self.time_slot.time}"
   end
 
-  def services_details
-    self.services.collect do |service|
-      "#{service.title} - #{service.price}"
-    end.join
-  end
-
   def total
     total = 0
     self.services.each do |service|
