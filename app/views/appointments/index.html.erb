@@ -1,6 +1,7 @@
-You currently have <%= @appointments.count %> appointment.<br>
+You currently have <%= @appointments.count %> appointments.<br>
 <% @appointments.each do |a| %>
-  <%= link_to a.dateandtime, a %>
+  <div><%= link_to a.dateandtime, a %><%= " : " + a.user.name + "
+  with stylist, " + a.user.stylist.name if current_user.admin? %></div>
 <% end %>
 
 <p><%= link_to 'Schedule New Appointment', new_appointment_path %></p>
