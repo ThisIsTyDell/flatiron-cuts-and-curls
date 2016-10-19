@@ -1,6 +1,6 @@
 <h1><%= @category.title %>'s Services</h1>
 
 <% @category.services.each do |service| %>
-  <div><%= service.title %> - <%= service.price %></div>
+  <div><%= service.title %> - <%= number_to_currency(service.price) %></div>
 <% end %>
 <%= link_to "Add New Service", new_service_path if current_user.admin? || current_user.employee? %>
