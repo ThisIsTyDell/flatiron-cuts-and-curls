@@ -1,1 +1,3 @@
-index.html.erb
+<% @services.each do |service| %>
+  <li><%= service.title %> - $<%= service.price %></li>
+<% end %>
