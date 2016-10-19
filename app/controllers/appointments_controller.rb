@@ -2,7 +2,8 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @appointments = current_user.appointments
+    @appointments = policy_scope(Appointment)
+    authorize User
   end
 
   def new
