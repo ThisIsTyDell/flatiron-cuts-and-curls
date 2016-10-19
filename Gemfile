@@ -39,6 +39,9 @@ gem 'pundit'
 # Use Rails_Admin for Admin panel
 gem 'rails_admin'
 
+# Use Stripe for payments
+gem 'stripe'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
