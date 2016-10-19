@@ -1,9 +1,5 @@
 <%= form_for(current_user) do |f| %>
-<% if current_user.have_stylist? %>
-    <%= f.label current_user.stylist.name %>
-  <% else %>
-    <%= f.label 'Select Stylist' %><br>
-    <%= f.select :stylist_id, User.employees.collect { |u| [ u.name, u.stylist_id ] } %>
-  <% end %>
+  <%= f.label 'Select Stylist' %><br>
+  <%= f.select :stylist_id, User.employees.collect { |u| [ u.name, u.id ] } %>
   <%= f.submit %>
 <% end %>
