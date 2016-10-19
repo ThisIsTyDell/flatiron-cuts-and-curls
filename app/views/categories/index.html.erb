@@ -1,4 +1,4 @@
-<%= @categories.each do |category| %>
+<% @categories.collect do |category| %>
   <div><%= link_to category.title, category_path(category) %> - <%= link_to "Edit", edit_category_path(category) if current_user.admin? || current_user.employee? %></li></div>
 <% end %>
 
