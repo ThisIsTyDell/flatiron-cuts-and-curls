@@ -1,4 +1,6 @@
 <%= @appointment.dateandtime %>
 <%= @appointment.services_details %>
 
+<p>Order total: <%= (@appointment.total) %> </p>
+
 <%= button_to "Cancel Appointment", @appointment, data: { confirm: "Are you sure?" }, method: :delete %>

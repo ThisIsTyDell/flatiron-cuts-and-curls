@@ -15,4 +15,12 @@ class Appointment < ActiveRecord::Base
     end.join
   end
 
+  def total
+    total = 0
+    self.services.each do |service|
+      total += service.price
+    end
+    return total
+  end
+
 end
