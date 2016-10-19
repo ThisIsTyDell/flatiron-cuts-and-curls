@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018213826) do
+ActiveRecord::Schema.define(version: 20161019032146) do
 
   create_table "appointment_services", force: :cascade do |t|
     t.integer  "appointment_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20161018213826) do
     t.string  "name"
     t.string  "time"
     t.integer "duration"
+    t.boolean "booked",   default: false
   end
 
   create_table "users", force: :cascade do |t|
