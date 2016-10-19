@@ -2,6 +2,6 @@
   <%= f.label 'Appointment Day and Time' %>
   <%= f.select :time_slot_id, TimeSlot.all.collect { |t| [ t.name + " " + t.time, t.id ] } %><br>
   <%= f.label 'Service' %>
-  <%= f.collection_check_boxes :services, Service.all, :id, :title %>
+  <%= f.collection_check_boxes :service_ids, Service.all, :id, :title %>
   <%= f.submit 'Book Appointment' %>
 <% end %>

@@ -10,7 +10,6 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    raise params.inspect
     available = Appointment.new(appointment_params).available?
     if available
       redirect_to user_path(user)
@@ -22,7 +21,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:time_slot_id, :day).merge(user_id: current_user.id)
+    params.require(:appointment).permit(:time_slot_id, :day, service_ids:[]).merge(user_id: current_user.id)
   end
 
 end
