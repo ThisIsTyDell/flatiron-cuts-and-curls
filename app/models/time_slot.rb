@@ -5,4 +5,9 @@ class TimeSlot < ActiveRecord::Base
   def self.available
     where(booked: false)
   end
+
+  def book
+    self.booked = true
+    self.save
+  end
 end
