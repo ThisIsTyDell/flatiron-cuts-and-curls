@@ -1,6 +1,15 @@
 <%= form_for(category) do |f| %>
-  <%= f.label :name %>
+  <%= f.label :'category name:' %>
   <%= f.text_field :title %><br>
+  <%= f.label :"Select from Services:" %>
+  <%= f.collection_check_boxes :service_ids, Service.all, :id, :title %><br>
+  <%= f.label :"or Create New Service:" %>
+  <%= f.fields_for :services, category.services.build do |services_fields| %>
+    <%= services_fields.label :'Service Name' %>
+    <%= services_fields.text_field :title %>
+    <%= services_fields.label :price %>
+    <%= services_fields.number_field :price %>
+  <% end %><br>
   <%= f.submit %>
 <% end %>
 

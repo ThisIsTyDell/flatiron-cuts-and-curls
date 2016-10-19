@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
 
 
   def category_params
-    params.require(:category).permit(:title)
+    params.require(:category).permit(:title, service_ids:[], services_attributes: [:title, :price])
   end
 
 end
