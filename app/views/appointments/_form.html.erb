@@ -1,6 +1,6 @@
 <%= form_for(appointment) do |f| %>
   <%= f.label 'Appointment Day and Time' %>
-  <%= f.select :time_slot_id, TimeSlot.all.collect { |t| [ t.name + " " + t.time, t.id ] } %><br>
+  <%= f.select :time_slot_id, TimeSlot.available.collect { |t| [ t.name + " " + t.time, t.id ] } %><br>
   <%= f.label 'Service' %>
   <%= f.collection_check_boxes :service_ids, Service.all, :id, :title %>
   <%= f.submit 'Book Appointment' %>
