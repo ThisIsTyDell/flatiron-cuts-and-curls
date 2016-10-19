@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_category, only: [:edit, :update, :destroy]
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
     @categories = Category.all
@@ -19,8 +19,10 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit
+  def show
+  end
 
+  def edit
   end
 
   def update
