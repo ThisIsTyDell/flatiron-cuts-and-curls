@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020052449) do
+ActiveRecord::Schema.define(version: 20161020062507) do
 
   create_table "appointment_services", force: :cascade do |t|
     t.integer  "appointment_id"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20161020052449) do
     t.datetime "updated_at",                          null: false
     t.integer  "stylist_id",             default: 1
     t.string   "name"
-    t.integer  "role"
+    t.integer  "role",                   default: 0
     t.string   "provider"
     t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
