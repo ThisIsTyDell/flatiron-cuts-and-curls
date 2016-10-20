@@ -6,13 +6,13 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Amount: <%= number_to_currency(@appointment.total) %></span>
     </label>
   </article>
-
+  <%= hidden_field_tag 'amount', @appointment.total * 100 %>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Cuts N Curls Service"
-          data-amount="500"
+          data-description="<%= @appointment.services.first.title %>"
+          data-email="<%= @current_user.email %>"
           data-locale="auto"></script>
 <% end %>

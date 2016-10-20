@@ -6,3 +6,5 @@
 <p>Order total: <%= number_to_currency(@appointment.total) %> </p>
 
 <%= button_to "Cancel Appointment", @appointment, data: { confirm: "Are you sure?" }, method: :delete %>
+
+<%= render 'charges/stripe_button' %>
