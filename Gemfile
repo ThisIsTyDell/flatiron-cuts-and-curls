@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Devise for Auth
 gem 'devise'
 
+# Use OmniAuth-Facebook
+gem 'omniauth-facebook'
 #Use Pundit for Auth
 gem 'pundit'
 
