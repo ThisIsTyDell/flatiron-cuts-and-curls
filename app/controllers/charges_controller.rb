@@ -3,8 +3,7 @@ class ChargesController < ApplicationController
   end
 
   def create
-    # Amount in cents\
-
+    @appointment = Appointment.find(params[:appointment_id])
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -17,6 +16,8 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+
+    redirect_to appointment_path(@appointment)
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
