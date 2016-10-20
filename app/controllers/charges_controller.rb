@@ -17,6 +17,9 @@ class ChargesController < ApplicationController
       :currency    => 'usd'
     )
 
+    @appointment.paid = true
+    @appointment.total_price_paid = params[:amount].to_i/100
+    @appointment.save
     redirect_to appointment_path(@appointment)
 
   rescue Stripe::CardError => e
