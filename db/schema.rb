@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020043716) do
+ActiveRecord::Schema.define(version: 20161020052449) do
 
   create_table "appointment_services", force: :cascade do |t|
     t.integer  "appointment_id"
@@ -69,9 +69,13 @@ ActiveRecord::Schema.define(version: 20161020043716) do
     t.integer  "stylist_id",             default: 1
     t.string   "name"
     t.integer  "role"
+    t.string   "provider"
+    t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["provider"], name: "index_users_on_provider"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["stylist_id"], name: "index_users_on_stylist_id"
+    t.index ["uid"], name: "index_users_on_uid"
   end
 
 end
