@@ -370,7 +370,7 @@ li.sign-up:hover {
 
 .bx-wrapper .bx-loading {
 	min-height: 50px;
-	background: url(../img/bx_loader.gif) center center no-repeat transparent;
+	background: url(/assets/images/bx_loader.gif) center center no-repeat transparent;
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -383,12 +383,12 @@ li.sign-up:hover {
 
 .bx-wrapper .bx-prev {
 	left: 10px;
-	background: url(../img/controls.png) no-repeat 0 -32px;
+	background: url(/assets/images/controls.png) no-repeat 0 -32px;
 }
 
 .bx-wrapper .bx-next {
 	right: 10px;
-	background: url(../img/controls.png) no-repeat -43px -32px;
+	background: url(/assets/images/controls.png) no-repeat -43px -32px;
 }
 
 .bx-wrapper .bx-prev:hover {
@@ -442,7 +442,7 @@ li.sign-up:hover {
 
 
 .home-box:hover {
-  background: url("../img/arrow.png") no-repeat scroll center bottom #35A3BC;
+  background: url("/assets/images/arrow.png") no-repeat scroll center bottom #35A3BC;
   transition: all 0.35s ease-in-out;
 	-moz-transition: all 0.35s ease-in-out;
 	-webkit-transition: all 0.35s ease-in-out;
@@ -493,12 +493,12 @@ li.sign-up:hover {
 }
 
 .title-blue {
-  background: url("../img/arrow-blue.png") no-repeat scroll left 15px bottom #3E4549;
+  background: url("/assets/images/arrow-blue.png") no-repeat scroll left 15px bottom #3E4549;
   padding-bottom: 30px;
 }
 
 .title-white {
-  background: url("../img/arrow.png") no-repeat scroll left 15px bottom #3E4549;
+  background: url("/assets/images/arrow.png") no-repeat scroll left 15px bottom #3E4549;
   padding-bottom: 30px;  
 }
 
@@ -509,7 +509,7 @@ li.sign-up:hover {
 }
 
 #team {
-  background: url("../img/team-bg.jpg") no-repeat scroll center center #ffffff;
+  background: url("/assets/images/team-bg.jpg") no-repeat scroll center center #ffffff;
   padding-top: 80px;
   padding-bottom: 0px;
   background-size: cover;

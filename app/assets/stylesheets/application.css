@@ -14,7 +14,10 @@
  *= require_self
  */
  
- *= require font-awesome
-@import "bootstrap";
-@import "main";
-@import "custom-styles";
+*= require font-awesome
+*= require animate.css
+*= require bootstrap.min.css
+*= require custom-styles.css
+*= require font-awesome.min.css
+*= require jquery.bxslider.css
+*= require main.css
