@@ -1,32 +1,31 @@
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <%= link_to image_tag("logo.png"), :root, class: "navbar-brand" %>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><%= link_to "Home", :root %></li>
-            <li><%= link_to "Services", services_path %></li>
-            <% if current_user %>
-              <li><%= link_to "My Appointments", appointments_path %></li>
-              <li><%= link_to "Book Appointment", new_appointment_path %></li>
-              <li><%= link_to "Profile", user_path(current_user) %></li>
-              <li><%= link_to "Admin", rails_admin_path if current_user.admin? %></li>
-              <li class="sign-up">
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <span class="white">Sign Out</span>
-                <% end %>
-              </li>
-            <% else %>
-              <li><%= link_to "sign in", new_user_session_path %></li>
-              <li class="sign-up">
-                <%= link_to new_user_registration_path do %>
-                  <span class="white">Sign Up</span>
-                <% end %>
-              </li>
-            <% end %>
-   
-          </ul>
-        </div><!--/.navbar-collapse -->
-      </div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to image_tag("logo.png"), :root, class: "navbar-brand" %>
     </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><%= link_to "Home", :root %></li>
+        <li><%= link_to "Services", services_path %></li>
+        <% if current_user %>
+          <li><%= link_to "My Appointments", appointments_path %></li>
+          <li><%= link_to "Book Appointment", new_appointment_path %></li>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
+          <li><%= link_to "Admin", rails_admin_path if current_user.admin? %></li>
+          <li class="sign-up">
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="white">Sign Out</span>
+            <% end %>
+          </li>
+        <% else %>
+          <li><%= link_to "sign in", new_user_session_path %></li>
+          <li class="sign-up">
+            <%= link_to new_user_registration_path do %>
+              <span class="white">Sign Up</span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div><!--/.navbar-collapse -->
+  </div>
+</div>
