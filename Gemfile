@@ -44,6 +44,9 @@ gem 'rails_admin'
 # Use Stripe for payments
 gem 'stripe'
 
+# Use Font Awesome for awesome fonts
+gem 'font-awesome-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
