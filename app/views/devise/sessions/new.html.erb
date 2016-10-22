@@ -13,17 +13,32 @@
   <div class="container">
     <div class="row">
 
-       <div class="col-sm-6 col-sm-offset-3 text-center form-container">
+      <div class="col-sm-6 col-sm-offset-3 text-center form-container">
 
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
+      <ul class="social-icons">
+        <li><a class="twitter" href="#" target="_blank"><i class="fa fa-twitter fa-3x"></i></a></li>
+        <li><a class="facebook" href="#" target="_blank"><i class="fa fa-facebook fa-3x"></i></a></li>
+        <li><a class="google" href="#" target="_blank"><i class="fa fa-google-plus fa-3x"></i></a></li>
+      </ul>
+
+      <hr>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name, id: "login-form", class: "form-horizontal")) do |f| %>
+
+        <div class="control-group">
+          <div class="controls">
+            <div class="row">
+              <%= f.email_field :email, autofocus: true, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "Email" %>
+            </div>
+          </div>
         </div>
 
-        <div class="field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
+        <div class="control-group">
+          <div class="controls">
+            <div class="row">
+              <%= f.password_field :password, autocomplete: "off", class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "Password" %>
+            </div>
+          </div>
         </div>
 
         <% if devise_mapping.rememberable? -%>
@@ -45,25 +60,7 @@
   </div><!--End Container-->
 </section>
 
-
-           
-              
-              <ul class="social-icons">
-                 <li><a class="twitter" href="#" target="_blank"><i class="fa fa-twitter fa-3x"></i></a></li>
-                 <li><a class="facebook" href="#" target="_blank"><i class="fa fa-facebook fa-3x"></i></a></li>
-                 <li><a class="google" href="#" target="_blank"><i class="fa fa-google-plus fa-3x"></i></a></li>
-               </ul>
-               
-               <hr>
-               
-              <form id="login-form" class="form-horizontal" method="post" action="#">                           
-              <div class="control-group">
-                <div class="controls">
-                 <div class="row">
-                    <input type="text" class="input-xlarge col-xs-8 col-xs-offset-2" id="email" name="email" placeholder="Email">
-                 </div>
-                </div>
-              </div>
+                      
               
               <div class="control-group">
                 <div class="controls">
