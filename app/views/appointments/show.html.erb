@@ -1,10 +1,29 @@
-<%= @appointment.dateandtime %>
-<% @appointment.services.each do |service| %>
-  <div><%= service.title %> - <%= number_to_currency(service.price) %></div>
-<% end %>
+<section id="page-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 title-white">
+        <h2>Your Appointment is scheduled for <%= @appointment.dateandtime %>!</h2>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>Order total: <%= number_to_currency(@appointment.total) %> </p>
 
-<%= render 'charges/stripe_button' unless @appointment.paid %>
+<section id="content">
+  <div class="container">
+    <div class="row margin-50">
+      <div class="col-md-8">
+        <h3><span class="blue">Your Appointment is scheduled for <%= @appointment.dateandtime %>!</span></h3>
+        <ol>
+          <% @appointment.services.each do |service| %>     
+            <li class="lead"><%= service.title %> - <%= number_to_currency(service.price) %></li>
+          <% end %>
+        </ol>
 
-<%= button_to "Cancel Appointment", @appointment, data: { confirm: "Are you sure?" }, method: :delete %>
+      </div>
+        <div class="col-md-4"><%= render 'charges/stripe_button' unless @appointment.paid %>
+        <%= button_to "Cancel Appointment", @appointment, data: { confirm: "Are you sure?" }, method: :delete, class: "btn-main" %>
+      </div>   
+    </div>
+  </div><!--End Row-->
+</section> 

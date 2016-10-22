@@ -6,7 +6,7 @@ class Appointment < ActiveRecord::Base
   accepts_nested_attributes_for :services
 
   def dateandtime
-    "#{self.time_slot.name} - #{self.time_slot.time}"
+    "#{self.time_slot.name} at #{self.time_slot.time}"
   end
 
   def total
