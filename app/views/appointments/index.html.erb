@@ -14,7 +14,7 @@
       <div class="col-md-8">
         <h3><span class="blue">You currently have <%= @appointments.count %> appointments.</span></h3>
         <% @appointments.each do |a| %>
-        <p class="lead"><%= link_to a.dateandtime, a %></p>
+        <p class="lead"><%= link_to a.dateandtime, a %><% a.services.each {|service| %> <%= service.title%> <%}%></p>
         <p class="gray"><%= " : " + a.user.name + "
 with stylist, " + a.user.stylist.name if current_user.try(:admin?) %></p><br />
         <% end %>
