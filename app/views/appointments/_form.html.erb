@@ -1,40 +1,49 @@
- <section id="message">
-    <div class="container">
-        <div class="row">
-          <div class="col-sm-10 col-sm-offset-1 text-center form-container">
+<section id="message">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 text-center form-container">
 
-            <hr>
-            <%= form_for(appointment, class: "form-horizontal" ) do |f| %>
+        <hr>
+        <%= form_for(appointment, class: "form-horizontal" ) do |f| %>
 
-            <div class="control-group">
-              <div class="controls">
-                <div class="row">
-                  <%= f.select( :time_slot_id, TimeSlot.available.collect { |t| [ t.name + " " + t.time, t.id ]}, {prompt: "Select A Date and Time"}, {class: "input-xlarge col-xs-8 col-xs-offset-2"} )%>
-                </div>
-              </div>
+        <div class="control-group">
+          <div class="controls">
+            <div class="row">
+              <%= f.select( :time_slot_id, TimeSlot.available.collect { |t| [ t.name + " " + t.time, t.id ]}, {prompt: "Select A Date and Time"}, {class: "input-xlarge col-xs-8 col-xs-offset-2"} )%>
             </div>
+          </div>
+        </div>
 
 
-            <div class="control-group">
-              <div class="controls">
-               <div class="row">
+        <div class="control-group">
+          <div class="controls">
+           <div class="row margin-40">
               <h3><%= f.label 'Service', class: "white" %></h3>
               <%= f.collection_check_boxes(:service_ids, Service.all, :id, :details) do |t| %>
-                <div><%= t.check_box + t.text %></div>
+              <div class="white col-md-6"><font size="5"><%= t.check_box + t.text %></font></div>
               <% end %>
-              <%= f.submit 'Book Appointment' %>
-            <% end %>
-                  </div>
-              </div>
             </div>
+          </div>
+        </div>
 
-            <%= link_to 'Cancel', appointments_path %>
+        <div class="control-group">
+            <div class="controls">
+            <%= f.submit 'Schedule', class: "btn-main col-md-3 col-md-offset-2" %>
+          </div>
+        </div>
 
-        </div><!--End Col 6-->
+        <% end %>
           
-      </div><!--End Row-->
-    </div><!--End Container-->
-  </section>
+        <div class="control-group">
+          <div class="controls">
+            <%= link_to 'Cancel', appointments_path, class: "btn-main col-md-3 col-md-offset-2" %>
+          </div>
+        </div>
+
+      </div><!--End Col 6-->    
+    </div><!--End Row-->
+  </div><!--End Container-->
+</section>
 
 
  <section id="message">
