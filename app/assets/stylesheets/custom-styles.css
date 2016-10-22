@@ -4,3 +4,13 @@
    ========================================================================== */ 
 
 
+.jumbotron {
+position: relative;
+margin-top: 100px;
+margin-bottom: 0px;
+background: url("https://static1.squarespace.com/static/549dbe0ce4b0be677c05f4c6/550c6c70e4b01f5b2b72797b/550c6c71e4b0215d2227fa35/1426877554782/IMG_2104.JPG") no-repeat center center;
+width:100%;
+height: 600px;
+background-size: 100% 100%;
+background-repeat: repeat;
+}

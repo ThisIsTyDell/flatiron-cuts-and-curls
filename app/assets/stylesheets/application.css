@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+/*
 *= require font-awesome
 *= require animate.css
 *= require bootstrap.min.css
@@ -21,3 +21,4 @@
 *= require font-awesome.min.css
 *= require jquery.bxslider.css
 *= require main.css
+*/
