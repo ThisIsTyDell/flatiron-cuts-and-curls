@@ -1,28 +1,34 @@
-  <section id="page-title">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 title-blue">
-          <h2>Services</h2>
-        </div>
+<section id="page-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 title-blue">
+        <h2>Services</h2>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!--About Content-->
-  <section id="blue-container">
-    <div class="container">
-      <div class="row">
-        
-        <div class="col-md-12 margin-50">
-          <% @services.each do |service| %>
-            <h3><%= service.title %> - <%= number_to_currency(service.price) %> : <%= link_to "Edit", edit_service_path(service) if current_user.try(:admin?) || current_user.try(:employee?) %></h3>
-                <p class="white"><%= service.description %></p>
-        <% end %>
-        </div><!--End Span12-->
-       
+<!--About Content-->
+<section id="blue-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 margin-50">
+        <% @services.each do |service| %>
+          <h3><%= service.title %> - <%= number_to_currency(service.price) %> : <%= link_to "Edit", edit_service_path(service) if current_user.try(:admin?) || current_user.try(:employee?) %></h3>
+              <p class="white"><%= service.description %></p>
+      <% end %>
+      <%= link_to "Add New Service", new_service_path if current_user.try(:admin?) || current_user.try(:employee?) %>
+      </div><!--End Span12-->
+    </div>
+  </div>
+</section>
+
+<section id="message">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 text-center">
+        <h4 class="gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
       </div>
     </div>
-  </section>
-
-
-<%= link_to "Add New Service", new_service_path if current_user.try(:admin?) || current_user.try(:employee?) %>
+  </div>
+</section>
