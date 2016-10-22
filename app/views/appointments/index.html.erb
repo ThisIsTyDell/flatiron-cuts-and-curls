@@ -1,7 +1,40 @@
-You currently have <%= @appointments.count %> appointments.<br>
-<% @appointments.each do |a| %>
-  <div><%= link_to a.dateandtime, a %><%= " : " + a.user.name + "
-  with stylist, " + a.user.stylist.name if current_user.admin? %></div>
-<% end %>
+<section id="page-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 title-white">
+        <h2>Appointments</h2>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p><%= link_to 'Schedule New Appointment', new_appointment_path %></p>
+<section id="content">
+  <div class="container">
+    <div class="row margin-50">
+      <div class="col-md-8">
+        <h3><span class="blue">You currently have <%= @appointments.count %> appointments.</span></h3>
+        <% @appointments.each do |a| %>
+        <p class="lead"><%= link_to a.dateandtime, a %></p>
+        <p class="gray"><%= " : " + a.user.name + "
+with stylist, " + a.user.stylist.name if current_user.try(:admin?) %></p><br />
+        <% end %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to 'Schedule New Appointment', new_appointment_path, class: "btn-main" %>
+      </div>
+    </div><!--End Row-->
+  </div>
+</section> 
+
+<section id="message">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 text-center">
+        <h4><%= link_to 'Schedule New Appointment', new_appointment_path, class: "btn-main" %></h4>
+      </div>
+      <div class="col-md-10 col-md-offset-1 text-center">
+      <h4 class="gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+    </div>
+    </div>
+  </div>
+</section>
