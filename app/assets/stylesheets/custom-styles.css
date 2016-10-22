@@ -14,25 +14,3 @@ height: 600px;
 background-size: 100% 100%;
 background-repeat: repeat;
 }
-
-.btn-checkout {
-  background: #38c8e0 repeat scroll 0 0;
-  border: none;
-  font-weight: 400;
-  border-radius: 0px;
-  box-shadow: none;
-  color: #FFFFFF;
-  text-decoration: none;
-  text-shadow: none;
-  padding: 0px 8px;
-  text-transform: uppercase;
-}
-
-.btn-checkout:hover {
-  background: #63ddf2 repeat scroll 0 0;
-  color: #FFFFFF;
-  text-decoration: none;
-  transition: all 0.35s ease-in-out;
-  -moz-transition: all 0.35s ease-in-out;
-  -webkit-transition: all 0.35s ease-in-out;
-}
