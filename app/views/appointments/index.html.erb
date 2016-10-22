@@ -13,10 +13,13 @@
     <div class="row margin-50">
       <div class="col-md-8">
         <h3><span class="blue">You currently have <%= @appointments.count %> appointments.</span></h3>
+        <p class="gray">If you wish to pay online or cancel, please select appointment below.</p>
         <% @appointments.each do |a| %>
+        <div class="col-md-6">
         <p class="lead"><%= link_to a.dateandtime, a %><% a.services.each {|service| %> <%= service.title%> <%}%></p>
         <p class="gray"><%= " : " + a.user.name + "
 with stylist, " + a.user.stylist.name if current_user.try(:admin?) %></p><br />
+</div>
         <% end %>
       </div>
       <div class="col-md-4">
