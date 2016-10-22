@@ -23,8 +23,9 @@
         <hr>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name, id: "login-form", class: "form-horizontal")) do |f| %>
-          <%= devise_error_messages! %>
 
+          
+<div class="small-message"><%= devise_error_messages! %></div>
           <div class="field">
             <div class="control-group">
               <div class="controls">
@@ -40,7 +41,7 @@
               <div class="controls">
                 <div class="row">
                   <% if @minimum_password_length %>
-                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                    <em class="small-message">(<%= @minimum_password_length %> characters minimum)</em>
                   <% end %><br />
                   <%= f.password_field :password, autocomplete: "off", class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "Password" %>
                 </div>
