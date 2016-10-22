@@ -48,8 +48,11 @@
           </div>
         <% end -%>
 
-        <div class="actions">
-          <%= f.submit "Log in" %>
+        <div class="control-group">
+          <div class="controls">
+            <%= f.submit "Log in", class: "btn-main"%>
+          </div>
+
         </div>
       <% end %>
 
@@ -60,20 +63,7 @@
   </div><!--End Container-->
 </section>
 
-                      
-              
-              <div class="control-group">
-                <div class="controls">
-                 <div class="row">
-                    <input type="Password" id="passwd" class="input-xlarge col-xs-8 col-xs-offset-2" name="passwd" placeholder="Password">
-                 </div>
-                </div>
-              </div>
-          
-              <div class="control-group">
-                  <div class="controls">
-                   <button type="submit" class="btn-main"><i class="fa fa-signin"></i> Log In</button>
-                  </div>
+
                   <a class="small-message" href="#"><small>Need An Account?</small></a>
               </div>
       
