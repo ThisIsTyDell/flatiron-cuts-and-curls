@@ -3,6 +3,6 @@ class Service < ApplicationRecord
   has_many :appointment_services
 
   def details
-    "#{self.title} - #{self.price}"
+    "#{self.title} - $#{self.price}.00"
   end
 end
