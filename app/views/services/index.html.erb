@@ -2,7 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 title-blue">
-        <h2>Services <%= link_to "- Add New Service", new_service_path if current_user.try(:admin?) || current_user.try(:employee?) %></h2>
+        <h2>Services <%= link_to("- Add New Service", new_service_path) if current_user.try(:admin?) || current_user.try(:employee?) %>
+        <%= link_to("- Add New Category", new_category_path) if current_user.try(:admin?) || current_user.try(:employee?) %></h2>
       </div>
     </div>
   </div>
