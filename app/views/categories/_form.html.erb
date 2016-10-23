@@ -1,16 +1,62 @@
-<%= form_for(category) do |f| %>
-  <%= f.label :'category name:' %>
-  <%= f.text_field :title %><br>
-  <%= f.label :"Select from Services:" %>
-  <%= f.collection_check_boxes :service_ids, Service.all, :id, :title %><br>
-  <%= f.label :"or Create New Service:" %>
-  <%= f.fields_for :services, category.services.build do |services_fields| %>
-    <%= services_fields.label :'Service Name' %>
-    <%= services_fields.text_field :title %>
-    <%= services_fields.label :price %>
-    <%= services_fields.number_field :price %>
-  <% end %><br>
-  <%= f.submit %>
-<% end %>
+<section id="message">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 text-center form-container">
 
-<%= link_to 'Cancel', categories_path %>
+      <%= form_for(category, class: "form-horizontal") do |f| %>
+        
+        <div class="control-group">
+          <div class="controls">
+            <div class="row">
+              <h3><%= f.label :"Enter a Category Name", class: "white" %></h3>
+              <%= f.text_field :title, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "Category Name" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <div class="row">
+              <h3><%= f.label :"Which services belong in this new category?", class: "white" %></h3>
+              <%= f.collection_check_boxes(:service_ids, Service.all, :id, :title) do |t| %>
+                <div class="white col-md-6"><font size="5"><%= t.check_box + t.text %></font></div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <div class="row">
+            <h3><%= f.label :"or Create New Service:", class: "white" %></h3>
+            <%= f.fields_for :services, category.services.build do |services_fields| %>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <div class="row">
+              <%= services_fields.text_field :title, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "Enter New Service Name" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <div class="controls">
+            <div class="row">
+              <%= services_fields.number_field :price, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "Enter Service Price" %>
+            </div>
+          </div>
+        </div>
+
+        <% end %>
+        <%= f.submit class: "btn-main col-md-3 col-xs-offset-2" %>
+      <% end %>
+
+      <%= link_to 'Cancel', categories_path, class: "btn-main col-md-3 col-md-offset-2" %>
+
+      </div><!--End Col 6-->    
+    </div><!--End Row-->
+  </div><!--End Container-->
+</section>
