@@ -14,3 +14,7 @@ height: 600px;
 background-size: 100% 100%;
 background-repeat: repeat;
 }
+
+.no-bullets {
+    list-style-type: none;
+}

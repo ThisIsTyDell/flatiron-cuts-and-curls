@@ -8,22 +8,28 @@
   </div>
 </section>
 
-
 <section id="content">
   <div class="container">
     <div class="row margin-50">
       <div class="col-md-8">
+        <li class="sign-up no-bullets"><font size="4", class="white"><%= @appointment.paid ? 'Thanks for paying in advance. We will see you soon!' : 'Please Pay Below'%></font></li>
         <h3><span class="blue">Your Appointment is scheduled for <%= @appointment.dateandtime %>!</span></h3>
         <ol>
           <% @appointment.services.each do |service| %>     
             <li class="lead"><%= service.title %> - <%= number_to_currency(service.price) %></li>
           <% end %>
         </ol>
-
+        <p class="amount lead"><span>Total Amount: <%= number_to_currency(@appointment.total) %></span></p>
+        <%= render 'charges/stripe_button' unless @appointment.paid %>
       </div>
-        <div class="col-md-4"><%= render 'charges/stripe_button' unless @appointment.paid %>
-        <%= button_to "Cancel Appointment", @appointment, data: { confirm: "Are you sure?" }, method: :delete, class: "btn-main" %>
-      </div>   
+      <div class="col-md-4">
+        <div class="row margin-20">
+          <%= button_to 'Cancel Current Appointment', @appointment, data: { confirm: "Are you sure?" }, method: :delete, class: "btn-main" %>
+        </div>
+        <div class="row margin-20">
+          <%= link_to 'Schedule A New Appointment', new_appointment_path, class: "btn-main" %>
+        </div>  
+      </div> 
     </div>
   </div><!--End Row-->
 </section> 

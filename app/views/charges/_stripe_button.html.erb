@@ -5,9 +5,7 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount lead">
-      <span>Amount: <%= number_to_currency(@appointment.total) %></span>
-    </label>
+
   </article>
 
   <%= hidden_field_tag 'appointment_id', @appointment.id %>
