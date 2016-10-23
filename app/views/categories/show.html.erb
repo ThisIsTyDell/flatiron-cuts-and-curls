@@ -1,6 +1,29 @@
-<h1><%= @category.title %>'s Services</h1>
+<section id="page-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 title-white">
+        <h2><%= @category.title %></h2>
+      </div>
+    </div>
+  </div>
+</section>
 
-<% @category.services.each do |service| %>
-  <div><%= service.title %> - <%= number_to_currency(service.price) %></div>
-<% end %>
-<%= link_to "Add New Service", new_service_path if current_user.admin? || current_user.employee? %>
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h3><span class="blue">Styles</span></h3>
+        <ul>        
+          <% @category.services.each do |service| %>
+            <li class="lead"><%= service.title %> - <%= number_to_currency(service.price) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <%= link_to("Add New Service", new_service_path, class: "btn-main") if current_user.admin? || current_user.employee? %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render 'layouts/bottom_message' %>
