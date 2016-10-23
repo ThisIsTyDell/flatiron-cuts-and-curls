@@ -5,6 +5,9 @@ class Appointment < ActiveRecord::Base
   has_many :services, through: :appointment_services
   accepts_nested_attributes_for :services
 
+  validates :time_slot_id, presence: true
+  validates :time_slot_id, uniqueness: true
+
   def dateandtime
     "#{self.time_slot.name} at #{self.time_slot.time}"
   end
