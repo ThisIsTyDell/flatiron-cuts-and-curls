@@ -13,14 +13,19 @@
     <div class="row margin-50">
       <div class="col-md-8">
         <% @categories.collect do |category| %>
-          <h3><span class="blue"><%= link_to category.title, category_path(category) %> - <%= link_to "Edit", edit_category_path(category) if current_user.admin? || current_user.employee? %></span></h3>
+          <h3>
+            <span class="blue"><%= link_to category.title, category_path(category) %></span>
+            <%= link_to " | Edit", edit_category_path(category) if current_user.try(:admin?) || current_user.try(:employee?) %>
+          </h3>
+
           <ul>
           <% category.services.each do |service| %>
             <li class="lead">
-              <%= service.title %> <p class="lead"><%= service.price %></p>
+              <%= service.title %> - <span class="grey"><%= number_to_currency(service.price) %></span><%= link_to " | Edit", edit_service_path(service) if current_user.try(:admin?) || current_user.try(:employee?) %>
             </li>
-          </ul>
+          
           <% end %>
+          </ul>
         <% end %>
       </div>
 
