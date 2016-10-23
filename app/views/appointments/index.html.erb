@@ -29,15 +29,4 @@ with stylist, " + a.user.stylist.name if current_user.try(:admin?) %></p><br />
   </div>
 </section> 
 
-<section id="message">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1 text-center">
-        <h4><%= link_to 'Schedule New Appointment', new_appointment_path, class: "btn-main" %></h4>
-      </div>
-      <div class="col-md-10 col-md-offset-1 text-center">
-      <h4 class="gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
-    </div>
-    </div>
-  </div>
-</section>
+<%= render 'layouts/bottom_message' %>
