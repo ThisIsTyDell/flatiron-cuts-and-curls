@@ -1,11 +1,21 @@
-<%= form_for(service) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :title %><br>
-  <%= f.label :price %>
-  <%= f.number_field :price %><br>
-  <%= f.label :'Select Category' %>
-  <%= f.collection_select(:category_id, Category.all, :id, :title, {include_blank: true}) %><br>
-  <%= f.submit %>
-<% end %>
+<section id="message">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 text-center form-container">
 
-<%= link_to 'Cancel', :back %>
+      <%= form_for(service) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :title %><br>
+        <%= f.label :price %>
+        <%= f.number_field :price %><br>
+        <%= f.label :'Select Category' %>
+        <%= f.collection_select(:category_id, Category.all, :id, :title, {include_blank: true}) %><br>
+        <%= f.submit %>
+      <% end %>
+
+      <%= link_to 'Cancel', :back %>
+      
+      </div><!--End Col 6-->    
+    </div><!--End Row-->
+  </div><!--End Container-->
+</section>
