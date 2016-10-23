@@ -1,0 +1,5 @@
+<%= form_for(current_user) do |f| %>
+  <%= f.label 'What\'s Your Name?' %>
+  <%= f.text_field :name %>
+  <%= f.submit :"Update Name"%>
+<% end %>
