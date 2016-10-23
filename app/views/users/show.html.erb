@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 title-white">
-          <h2><%= render 'users/name' unless @user.name %></h2>
+          <h2><%= render 'users/name' unless @user.name %><%= @user.name %></h2>
         </div>
       </div>
     </div>
@@ -13,11 +13,12 @@
       <div class="row margin-60">
         
         <!--Team Member Image-->
-        <div class="col-md-5 text-center">
+        <div class="col-md-5">
           <h4 class="dark-gray"><% if @user.have_stylist? %>
             Your stylist is <%= @user.stylist.name %>.
           <% else %>
-            You do not have a stylist yet.
+            You do not have a stylist.
+            <%= render 'users/stylist_form' %>
           <% end %></h4>
         </div>
         
@@ -29,9 +30,20 @@
       
       <div class="row">
         <div class="col-md-12 text-center">
-          <p><%= link_to "Book Appointment", new_appointment_path, class: 'btn-main' %></p>
+          <p><%= link_to("Book Appointment", new_appointment_path, class: 'btn-main') unless !@user.have_stylist? %></p>
         </div>
       </div>
       
     </div>
   </section> 
+
+    <!--Message-->
+    <section id="message">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 text-center">
+            <h4 class="gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4>
+          </div>
+        </div>
+      </div>
+    </section>

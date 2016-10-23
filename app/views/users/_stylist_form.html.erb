@@ -1,5 +1,5 @@
 <%= form_for(current_user) do |f| %>
-  <%= f.label 'Select Stylist' %><br>
-  <%= f.select :stylist_id, User.employees.collect { |u| [ u.name, u.id ] } %>
-  <%= f.submit %>
+  <%= f.label 'Select a Stylist' %><br>
+  <%= f.select :stylist_id, User.employees.collect { |u| [ u.name, u.id ] } %><br>
+  <%= f.submit :"Confirm", class: "btn-main" %>
 <% end %>
