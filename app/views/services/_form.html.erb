@@ -1,21 +1,53 @@
-<section id="message">
+<section id="blue-container">
   <div class="container">
     <div class="row">
-      <div class="col-sm-10 col-sm-offset-1 text-center form-container">
 
-      <%= form_for(service) do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :title %><br>
-        <%= f.label :price %>
-        <%= f.number_field :price %><br>
-        <%= f.label :'Select Category' %>
-        <%= f.collection_select(:category_id, Category.all, :id, :title, {include_blank: true}) %><br>
-        <%= f.submit %>
-      <% end %>
+    <div class="col-sm-12 text-center">
+      <%= form_for(service, class: "form-horizontal") do |f| %>
 
-      <%= link_to 'Cancel', :back %>
-      
-      </div><!--End Col 6-->    
+      <div class="control-group">
+        <div class="controls">
+          <div class="row">
+            <%= f.text_field :title, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: 'Service Name' %><br>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <div class="row">
+            <%= f.number_field :price, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "Price" %><br>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="control-group">
+        <div class="controls">
+          <div class="row">
+            <%= f.collection_select(:category_id, Category.all, :id, :title, {prompt: "Please Select a Category"}, {class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "COJ"}) %><br>
+          </div>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <div class="row margin-20">
+            <%= f.submit class: "btn-main col-xs-8 col-xs-offset-2" %>
+          </div>
+        </div>
+      </div>
+
+          <% end %>
+      <div class="control-group">
+        <div class="controls">
+          <div class="row">
+            <%= link_to 'Cancel', :back, class: "btn-main col-xs-8 col-xs-offset-2" %>
+          </div>
+        </div>
+      </div>
+
+     </div>
+     
     </div><!--End Row-->
   </div><!--End Container-->
 </section>
