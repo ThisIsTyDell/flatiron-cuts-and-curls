@@ -1,8 +1,37 @@
-<h1><%= @user.name %></h1>
-<p><%= link_to "Book Appointment", new_appointment_path %></p>
-<% if @user.have_stylist? %>
-  Your stylist is <%= @user.stylist.name %>. 
-<% else %>
-  You do not have a stylist yet.
-<% end %>
-You may book <%= @user.have_stylist? ? @user.stylist.name + ', your' : 'a' %> stylist, by clicking <%= link_to "Book Appointment", new_appointment_path %>.
+  <section id="page-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 title-white">
+          <h2><%= render 'users/name' unless @user.name %></h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section id="content">
+    <div class="container">
+      <div class="row margin-60">
+        
+        <!--Team Member Image-->
+        <div class="col-md-5 text-center">
+          <h4 class="dark-gray"><% if @user.have_stylist? %>
+            Your stylist is <%= @user.stylist.name %>.
+          <% else %>
+            You do not have a stylist yet.
+          <% end %></h4>
+        </div>
+        
+        <!--Team Member Info-->
+        <div class="col-md-7">
+          <h4 class="dark-gray">You may book <%= @user.have_stylist? ? @user.stylist.name + ', your' : 'a' %> stylist, by clicking <%= link_to "Book Appointment", new_appointment_path %>.</h4>      
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p><%= link_to "Book Appointment", new_appointment_path, class: 'btn-main' %></p>
+        </div>
+      </div>
+      
+    </div>
+  </section> 
