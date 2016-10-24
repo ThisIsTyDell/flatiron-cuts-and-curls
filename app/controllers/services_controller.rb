@@ -4,7 +4,11 @@ class ServicesController < ApplicationController
   helper_method :params
 
   def index
-    @services = Service.all
+    if params[:category_id]
+      @services = Category.find(params[:category_id]).services
+    else
+      @services = Service.all
+    end
   end
 
   def new
