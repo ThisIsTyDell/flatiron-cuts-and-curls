@@ -13,7 +13,7 @@ class ServicesController < ApplicationController
 
   def new
     @service = Service.new(category_id: params[:category_id])
-    @service.build_category
+    
   end
 
   def create

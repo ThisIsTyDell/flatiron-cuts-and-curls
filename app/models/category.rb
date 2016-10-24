@@ -7,12 +7,8 @@ class Category < ApplicationRecord
 
   def services_attributes=(service_attributes)
     service_attributes.values.each do |service_attribute|
-      if !service_attribute == nil
-        service = Service.find_or_create_by(service_attribute)
-        self.services << service
-      else
-        nil
-      end
+      service = Service.find_or_create_by(service_attribute)
+      self.services << service
     end
   end
 
