@@ -6,7 +6,6 @@ class Appointment < ActiveRecord::Base
   accepts_nested_attributes_for :services
 
   validates :time_slot_id, presence: true
-  validates :time_slot_id, uniqueness: true
 
   def dateandtime
     "#{self.time_slot.name} at #{self.time_slot.time}"

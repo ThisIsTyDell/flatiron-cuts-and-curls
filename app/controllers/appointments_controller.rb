@@ -9,11 +9,6 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
   end
 
-  def show
-    @appointment = Appointment.find(params[:id])
-    authorize @appointment
-  end
-
   def create
     appointment = Appointment.new(appointment_params)
     if appointment.save
@@ -22,6 +17,11 @@ class AppointmentsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @appointment = Appointment.find(params[:id])
+    authorize @appointment
   end
 
   def destroy
@@ -35,7 +35,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:time_slot_id, :day, service_ids:[]).merge(user_id: current_user.id)
+    params.require(:appointment).permit(:time_slot_id, service_ids:[]).merge(user_id: current_user.id)
   end
 
 end

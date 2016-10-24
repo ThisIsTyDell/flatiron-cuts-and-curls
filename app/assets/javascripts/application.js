@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery-ui
+
+//= bootstrap.min.js
+//= jquery-1.10.1.min.js
+//= main.js
+//= modernizr-2.6.2-respond-1.1.0.min.js
