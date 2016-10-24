@@ -1,40 +1,40 @@
-  <section id="page-title">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 title-white">
-          <h2><%= render 'users/name' unless @user.name %><%= @user.name %></h2>
-        </div>
+<section id="page-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 title-white">
+        <h2><%= render 'users/name' unless @user.name %><%= @user.name %></h2>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <section id="content">
-    <div class="container">
-      <div class="row margin-60">
-        
-        <!--Team Member Image-->
-        <div class="col-md-5">
-          <h4 class="dark-gray"><% if @user.have_stylist? %>
-            Your stylist is <%= @user.stylist.name %>.
-          <% else %>
-            You do not have a stylist.
-            <%= render 'users/stylist_form' %>
-          <% end %></h4>
-        </div>
-        
-        <!--Team Member Info-->
-        <div class="col-md-7">
-          <h4 class="dark-gray">You may book <%= @user.have_stylist? ? @user.stylist.name + ', your' : 'a' %> stylist, by clicking <%= link_to "Book Appointment", new_appointment_path %>.</h4>      
-        </div>
+  <div class="container">
+    <div class="row margin-60">
+      
+      <!--Team Member Image-->
+      <div class="col-md-5">
+        <h4 class="dark-gray"><% if @user.have_stylist? %>
+          Your stylist is <%= @user.stylist.name %>.
+        <% else %>
+          You do not have a stylist.
+          <%= render 'users/stylist_form' %>
+        <% end %></h4>
       </div>
       
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p><%= link_to("Book Appointment", new_appointment_path, class: 'btn-main') unless !@user.have_stylist? %></p>
-        </div>
+      <!--Team Member Info-->
+      <div class="col-md-7">
+        <h4 class="dark-gray">You may book <%= @user.have_stylist? ? @user.stylist.name + ', your' : 'a' %> stylist, by clicking <%= link_to "Book Appointment", new_appointment_path %>.</h4>      
       </div>
-      
     </div>
-  </section> 
+    
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p><%= link_to("Book Appointment", new_appointment_path, class: 'btn-main') unless !@user.have_stylist? %></p>
+      </div>
+    </div>
+    
+  </div>
+</section> 
 
 <%= render 'layouts/bottom_message' %>
