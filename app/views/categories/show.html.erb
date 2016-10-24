@@ -20,7 +20,7 @@
         </ul>
       </div>
       <div class="col-md-4">
-        <%= link_to("Add New Service", new_service_path, class: "btn-main") if current_user.admin? || current_user.employee? %>
+        <%= link_to("Add New Service", new_category_service_path(@category), class: "btn-main") if current_user.admin? || current_user.employee? %>
       </div>
     </div>
   </div>

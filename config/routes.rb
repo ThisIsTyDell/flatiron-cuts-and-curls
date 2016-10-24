@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :services, except: [:show]
 
   resources :categories do
-    resources :services, only: [:show, :index]
+    resources :services, only: [:show, :index, :new]
   end
 
   resources :charges

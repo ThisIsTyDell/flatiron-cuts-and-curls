@@ -12,7 +12,7 @@ class ServicesController < ApplicationController
   end
 
   def new
-    @service = Service.new
+    @service = Service.new(category_id: params[:category_id])
     @service.build_category
   end
 
