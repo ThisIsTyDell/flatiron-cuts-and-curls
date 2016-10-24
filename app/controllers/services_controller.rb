@@ -1,6 +1,7 @@
 class ServicesController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_service, only: [:edit, :update, :destroy]
+  helper_method :params
 
   def index
     @services = Service.all
