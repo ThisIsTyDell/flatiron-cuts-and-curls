@@ -6,6 +6,9 @@ Cuts and Curls Ruby on Rails Application
 Rails application for hair salons for interaction between clients and stylists.
 For more detail, check this blog post. http://tydellmiller.com/2016/10/24/introducing_cutsncurls_a_ruby_on_rails_application/
 
+* Walkthrough Video
+https://www.youtube.com/watch?v=LUV3sodtUaQ
+
 * Gems
   - Devise
   - OmniAuth-facebook
@@ -15,5 +18,3 @@ For more detail, check this blog post. http://tydellmiller.com/2016/10/24/introd
   - font-awesome
 
 * Theme from Wrapbootstrap
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LUV3sodtUaQ" frameborder="0" allowfullscreen></iframe>
