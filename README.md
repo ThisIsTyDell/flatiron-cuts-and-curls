@@ -1,6 +1,6 @@
-# README
+# Cuts and Curls Ruby on Rails Application README
 
-Cuts and Curls Ruby on Rails Application
+
 
 ## Desciption
 Rails application for hair salons for interaction between clients and stylists.
@@ -13,7 +13,7 @@ https://www.youtube.com/watch?v=LUV3sodtUaQ
   To install a copy of this project fork and clone this repository.
 
   In your terminal run `bundle install` to install gems.
-  
+
   Next run `rake db:migrate` to create the database.
 
   This project utilizes 
