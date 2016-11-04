@@ -15,6 +15,8 @@ https://www.youtube.com/watch?v=LUV3sodtUaQ
 
   Next run `rake db:migrate` to create the database.
 
+  Finally run `rails s` to start up the server.
+
   This project utilizes 
   - Devise (authorization and authentication)
   - OmniAuth-facebook (logging in through Facebook)
