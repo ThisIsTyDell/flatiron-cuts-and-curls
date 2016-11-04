@@ -12,8 +12,10 @@ https://www.youtube.com/watch?v=LUV3sodtUaQ
 ## Installation
   To install a copy of this project fork and clone this repository
 
+  Next run `rake db:migrate` to create the database.
+
   In your terminal run `bundle install` to install gems.
-  ### This project utilizes 
+  This project utilizes 
   - Devise (authorization and authentication)
   - OmniAuth-facebook (logging in through Facebook)
   - Pundit (authorization with roles)
@@ -22,7 +24,6 @@ https://www.youtube.com/watch?v=LUV3sodtUaQ
   - font-awesome (fonts used for theme)
 
 
-  After that you will need to run `rake db:migrate` to create the database.
-
+ 
 
 ## Theme from Wrapbootstrap
