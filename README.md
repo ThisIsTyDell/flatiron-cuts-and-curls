@@ -2,20 +2,20 @@
 
 Cuts and Curls Ruby on Rails Application
 
-* Desciption
+## Desciption
 Rails application for hair salons for interaction between clients and stylists.
 For more detail, check this blog post. http://tydellmiller.com/2016/10/24/introducing_cutsncurls_a_ruby_on_rails_application/
 
-* Walkthrough Video
+## Walkthrough Video
 https://www.youtube.com/watch?v=LUV3sodtUaQ
 
-* Installation
+## Installation
   fork and clone this repository
 
   In your terminal run `bundle install` to install gems.
 
   After that you will need to run `rake db:migrate` to create the database.
-  
+
   This project utilizes 
   - Devise (authorization and authentication)
   - OmniAuth-facebook (logging in through Facebook)
@@ -24,4 +24,4 @@ https://www.youtube.com/watch?v=LUV3sodtUaQ
   - bootstrap (CSS grid framework)
   - font-awesome (fonts used for theme)
 
-* Theme from Wrapbootstrap
+## Theme from Wrapbootstrap
