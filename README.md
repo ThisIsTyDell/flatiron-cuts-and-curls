@@ -9,12 +9,19 @@ For more detail, check this blog post. http://tydellmiller.com/2016/10/24/introd
 * Walkthrough Video
 https://www.youtube.com/watch?v=LUV3sodtUaQ
 
-* Gems
-  - Devise
-  - OmniAuth-facebook
-  - Pundit
-  - rails-admin
-  - bootstrap
-  - font-awesome
+* Installation
+  fork and clone this repository
+
+  In your terminal run `bundle install` to install gems.
+
+  After that you will need to run `rake db:migrate` to create the database.
+  
+  This project utilizes 
+  - Devise (authorization and authentication)
+  - OmniAuth-facebook (logging in through Facebook)
+  - Pundit (authorization with roles)
+  - rails-admin (admin panel)
+  - bootstrap (CSS grid framework)
+  - font-awesome (fonts used for theme)
 
 * Theme from Wrapbootstrap
