@@ -15,7 +15,7 @@ https://www.youtube.com/watch?v=LUV3sodtUaQ
 
   Next run `rake db:migrate` to create the database.
 
-  Finally run `rails s` to start up the server.
+  Finally run `rails s` to start up the server and visit localhost:3000 in your browser.
 
   This project utilizes 
   - Devise (authorization and authentication)
