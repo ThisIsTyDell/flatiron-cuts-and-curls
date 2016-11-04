@@ -6,7 +6,7 @@ Rails application for hair salons for interaction between clients and stylists. 
 For more detail, check this blog post. http://tydellmiller.com/2016/10/24/introducing_cutsncurls_a_ruby_on_rails_application/
 
 ## Walkthrough Video
-https://www.youtube.com/watch?v=LUV3sodtUaQ
+https://www.youtube.com/watch?v=dVNTM7TJoQk
 
 ## Installation
   To install a copy of this project fork and clone this repository.
