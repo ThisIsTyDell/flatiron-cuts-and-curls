@@ -10,10 +10,12 @@ For more detail, check this blog post. http://tydellmiller.com/2016/10/24/introd
 https://www.youtube.com/watch?v=LUV3sodtUaQ
 
 ## Installation
-  To install a copy of this project fork and clone this repository
+  To install a copy of this project fork and clone this repository.
+
   In your terminal run `bundle install` to install gems.
-  Next run `rake db:migrate` to create the database.
   
+  Next run `rake db:migrate` to create the database.
+
   This project utilizes 
   - Devise (authorization and authentication)
   - OmniAuth-facebook (logging in through Facebook)
