@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161022030324) do
+ActiveRecord::Schema.define(version: 20161104203805) do
 
   create_table "appointment_services", force: :cascade do |t|
     t.integer  "appointment_id"
@@ -41,9 +41,13 @@ ActiveRecord::Schema.define(version: 20161022030324) do
     t.string   "title"
     t.integer  "price"
     t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.text     "description"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["category_id"], name: "index_services_on_category_id"
   end
 
