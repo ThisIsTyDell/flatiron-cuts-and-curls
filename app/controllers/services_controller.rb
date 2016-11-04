@@ -4,7 +4,7 @@ class ServicesController < ApplicationController
   helper_method :params
 
   def index
-    if params[:category_id]
+    if params[:category_id] && params[:category_id] != " "
       @services = Category.find(params[:category_id]).services
     else
       @services = Service.all

@@ -16,8 +16,8 @@
       <div class="col-md-2 margin-50">
         <h3>Category:</h3>
         <%= form_tag("/services", method: "get") do %>
-          <%= select_tag "category_id", options_from_collection_for_select(Category.all, "id", "title"), include_blank: true %>
-          <%= submit_tag "Filter" %>
+          <%= select_tag "category_id", content_tag(:option,'All Styles',:value=>" ") + options_from_collection_for_select(Category.all, "id", "title") %>
+          <%= submit_tag "Filter", class: "btn-main" %>
         <% end %>
       </div>
 
