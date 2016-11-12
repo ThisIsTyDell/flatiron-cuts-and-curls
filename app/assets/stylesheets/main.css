@@ -442,7 +442,7 @@ li.sign-up:hover {
 
 
 .home-box:hover {
-  background: url("/assets/images/arrow.png") no-repeat scroll center bottom #35A3BC;
+  background: url("arrow.png") no-repeat scroll center bottom #35A3BC;
   transition: all 0.35s ease-in-out;
 	-moz-transition: all 0.35s ease-in-out;
 	-webkit-transition: all 0.35s ease-in-out;
@@ -493,12 +493,12 @@ li.sign-up:hover {
 }
 
 .title-blue {
-  background: url("/assets/images/arrow-blue.png") no-repeat scroll left 15px bottom #3E4549;
+  background: url("arrow-blue.png") no-repeat scroll left 15px bottom #3E4549;
   padding-bottom: 30px;
 }
 
 .title-white {
-  background: url("/assets/images/arrow.png") no-repeat scroll left 15px bottom #3E4549;
+  background: url("arrow.png") no-repeat scroll left 15px bottom #3E4549;
   padding-bottom: 30px;  
 }
 
