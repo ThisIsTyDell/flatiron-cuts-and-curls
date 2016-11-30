@@ -41,3 +41,20 @@ APPOINTMENT_SERVICES - Join Table
 
 
   FACEBOOK <li><%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %></li>
+
+-------------------------
+jQuery and AJAX notes
+
+  must render index page using jQuery and Active Model Serialization JSON backend
+    -convert Services index page to implement this
+
+  must render show page using jQuery and Active Model Serilaization JSON backend
+    -convert Services show page to implement this
+
+  must reveal at least one has-many relationship in the JSON that is then rendered to the page.
+    -convert users appointment page to use this
+
+  Must use your Rails API and a form to create a resource and render the response without a page refresh
+    -allow new services to be added without refreshing the page
+
+  Must translate the JSON responses into Javascript Model Objects. The Model Objects must have at least one method on the prototype.
