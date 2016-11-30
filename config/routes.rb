@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   resources :appointments
 
-  resources :services, except: [:show]
-
+  resources :services
+  
   resources :categories do
     resources :services, only: [:show, :index, :new]
   end

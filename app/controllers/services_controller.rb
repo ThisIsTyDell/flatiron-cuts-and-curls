@@ -11,9 +11,16 @@ class ServicesController < ApplicationController
     end
   end
 
+  def show
+    @service = Service.find(params[:id])
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @service }
+    end
+  end
+
   def new
     @service = Service.new(category_id: params[:category_id])
-    
   end
 
   def create
