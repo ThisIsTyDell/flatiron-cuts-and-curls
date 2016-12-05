@@ -13,8 +13,6 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
-    @first = Service.first.id
-    @last = Service.last.id
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @service }
