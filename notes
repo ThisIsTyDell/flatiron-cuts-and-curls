@@ -48,7 +48,7 @@ jQuery and AJAX notes
   must render index page using jQuery and Active Model Serialization JSON backend
     -convert Services index page to implement this
 
-  must render show page using jQuery and Active Model Serilaization JSON backend
+  DONE - must render show page using jQuery and Active Model Serilaization JSON backend
     -convert Services show page to implement this
 
   must reveal at least one has-many relationship in the JSON that is then rendered to the page.
