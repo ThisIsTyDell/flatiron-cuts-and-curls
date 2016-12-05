@@ -13,6 +13,7 @@ function getNext() {
     $(".serviceDescription").text(data["description"]);
 
     $(".js-next").attr("data-id", data["id"]);
+    $(".js-previous").attr("data-id", data["id"]);
   });
 }
 
@@ -26,6 +27,7 @@ function getPrevious() {
     $(".servicePrice").text(data["price"]);
     $(".serviceDescription").text(data["description"]);
 
+    $(".js-next").attr("data-id", data["id"]);
     $(".js-previous").attr("data-id", data["id"]);
   });
 };
