@@ -11,13 +11,14 @@
 <section id="content">
   <div class="container">
     <div class="row margin-20">
-      <h3><span class="blue"><%= @service.title %> - <%= number_to_currency(@service.price) %></span></h3>
-      <p><%= @service.description %></p>
+      <h3><span class="blue serviceTitle"><%= @service.title %> - <%= number_to_currency(@service.price) %></span></h3>
+      <p class="serviceDescription"><%= @service.description %></p>
     </div>
 
     <div class="row">
+      <a href="#" class="js-previous btn-main" data-id="<%= @service.id %>">PREVIOUS</a>
       <a href="#" class="js-next btn-main" data-id="<%=@service.id%>">NEXT</a>
-      <a href="#" class="js-next btn-main" data-id="<%= @service.id %>">PREVIOUS</a>
+
     </div>
     </div>
   </div><!--End Row-->
