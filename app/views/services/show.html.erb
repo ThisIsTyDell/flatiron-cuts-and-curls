@@ -11,7 +11,7 @@
 <section id="content">
   <div class="container">
     <div class="row margin-20">
-      <h3><span class="blue serviceTitle"><%= @service.title %> - <%= number_to_currency(@service.price) %></span></h3>
+      <h3 class="blue"><span class="serviceTitle"><%= @service.title %></span> - <span class="servicePrice"><%= number_to_currency(@service.price) %></span></h3>
       <p class="serviceDescription"><%= @service.description %></p>
     </div>
 
