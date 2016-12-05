@@ -16,8 +16,8 @@
     </div>
 
     <div class="row">
-      <%= button_to 'Next', class: "btn-main" %>
-      <%= button_to 'Previous', class: "btn-main" %>
+      <a href="#" class="js-next btn-main" data-id="<%=@service.id%>">NEXT</a>
+      <a href="#" class="js-next btn-main" data-id="<%= @service.id %>">PREVIOUS</a>
     </div>
     </div>
   </div><!--End Row-->
