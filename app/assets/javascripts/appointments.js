@@ -12,9 +12,9 @@ function showAppointments() {
       var time = "<h4 class='dark-gray'>" + appointment.time_slot.name + "</h4>"
       var paid = "<p>Paid: " + appointment.paid + "</p>"
       var total = "<p>Total: $" + appointment.total_price_paid + ".00</p>"
-      var appointmentText = time + paid + total
+      var appointmentText = "<li>" + time + paid + total + "</li>"
       
-      $("#user-" + userId + "-appointments").html(appointmentText)
+      $("#user-" + userId + "-appointments").append(appointmentText)
 
       appointment["services"].forEach(function(service) {
         console.log(service.title)
