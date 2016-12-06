@@ -24,7 +24,7 @@ function getPrevious() {
   $.get("/services/" + previousId + ".json", function(data) {
 
     $(".serviceTitle").text(data["title"]);
-    $(".servicePrice").text(data["price"]);
+    $(".servicePrice").text('$' + data["price"] + '.00');
     $(".serviceDescription").text(data["description"]);
 
     $(".js-next").attr("data-id", data["id"]);
