@@ -3,6 +3,10 @@ class AppointmentsController < ApplicationController
 
   def index
     @appointments = policy_scope(Appointment)
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @appointments }
+    end
   end
 
   def new
