@@ -8,6 +8,10 @@ class ServicesController < ApplicationController
       @services = Category.find(params[:category_id]).services
     else
       @services = Service.all
+      respond_to do |format|
+        format.html { render :index }
+        format.json { render json: @services }
+      end
     end
   end
 
