@@ -4,4 +4,5 @@ $(function () {
 
 function showAppointments() {
   event.preventDefault();
+  var userId = parseInt(this.attributes[2].value)
 }
