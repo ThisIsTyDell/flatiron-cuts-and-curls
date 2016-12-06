@@ -15,6 +15,7 @@
       <% @users.each do |user| %>
         <div class="col-md-6">
           <h4 class="dark-gray"><b><%= user.name %></b> - <%= user.email%></h4>
+          <a href="#" class="js-view-appt" data-id="">View Appointments</a>
         </div>
       <% end %>
     
