@@ -2,7 +2,8 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @appointments = policy_scope(Appointment)
+    #@appointments = policy_scope(Appointment)
+    @appointments = Appointment.where(user_id: params[:user_id])
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @appointments }
