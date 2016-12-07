@@ -31,6 +31,10 @@
       </div>
 
       <div class="col-md-9 margin-50">
+        <div id="serviceResult">
+          <h3 id="serviceTitlePrice">
+          <p id="serviceDescription"></p>
+        </div>
 
         <% if !params[:category_id].blank? %>
           <% @services = Service.where(category_id: params[:category_id]) %>
