@@ -1,7 +1,7 @@
 $(function () {
   $(".js-next").on('click', getNext);
   $(".js-previous").on('click', getPrevious);
-  $('form').submit(function(event) { 
+  $('.quick-add').submit(function(event) { 
     event.preventDefault();
     alert("we r hack3rz");
   })
