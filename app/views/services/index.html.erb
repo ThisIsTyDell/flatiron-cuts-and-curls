@@ -19,6 +19,9 @@
           <%= select_tag "category_id", content_tag(:option,'All Styles',:value=>" ") + options_from_collection_for_select(Category.all, "id", "title") %>
           <%= submit_tag "Filter", class: "btn-main" %>
         <% end %>
+
+        <h3>Quick Add:</h3>
+        
       </div>
 
       <div class="col-md-10 margin-50">
