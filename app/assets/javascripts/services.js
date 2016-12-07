@@ -9,9 +9,11 @@ $(function () {
     var posting = $.post('/services', values);
 
     posting.done(function(data) {
-      console.log(data);
-    })
-  })
+      var service = data;
+      $("#serviceTitlePrice").text(service["title"] + " - " + "$" + service["price"] + ".00");
+      $("#serviceDescription").text(service["description"]);
+    });
+  });
 });
 
 function getNext() {
