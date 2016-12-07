@@ -13,7 +13,7 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-2 margin-50">
+      <div class="col-md-3 margin-50">
         <h3>Category:</h3>
         <%= form_tag("/services", method: "get") do %>
           <%= select_tag "category_id", content_tag(:option,'All Styles',:value=>" ") + options_from_collection_for_select(Category.all, "id", "title") %>
@@ -21,10 +21,16 @@
         <% end %>
 
         <h3>Quick Add:</h3>
-        
+        <%= form_for(Service.new, class: "form-horizontal") do |f| %>
+          <%= f.text_field :title, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: 'Service Name' %><br>
+          <%= f.number_field :price, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "Price" %><br>
+          <%= f.file_field :avatar, class: " btn-main col-xs-8 col-xs-offset-2" %>
+          <%= f.collection_select(:category_id, Category.all, :id, :title, {prompt: "Please Select a Category"}, {class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "COJ"}) %><br>
+          <%= f.submit class: "btn-main col-xs-8 col-xs-offset-2" %>
+        <% end %>
       </div>
 
-      <div class="col-md-10 margin-50">
+      <div class="col-md-9 margin-50">
 
         <% if !params[:category_id].blank? %>
           <% @services = Service.where(category_id: params[:category_id]) %>
