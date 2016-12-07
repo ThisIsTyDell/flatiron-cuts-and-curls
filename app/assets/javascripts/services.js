@@ -1,7 +1,10 @@
 $(function () {
   $(".js-next").on('click', getNext);
   $(".js-previous").on('click', getPrevious);
-  quickSubmitListener;
+  $('form').submit(function(event) { 
+    event.preventDefault();
+    alert("we r hack3rz");
+  })
 });
 
 function getNext() {
@@ -31,11 +34,4 @@ function getPrevious() {
     $(".js-next").attr("data-id", data["id"]);
     $(".js-previous").attr("data-id", data["id"]);
   });
-};
-
-function quickSubmitListener() {
-  $(".quick-add").submit(function(event) { 
-    event.preventDefault();
-    alert("we r hack3rz");
-  })
 };
