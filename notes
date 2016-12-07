@@ -45,13 +45,13 @@ APPOINTMENT_SERVICES - Join Table
 -------------------------
 jQuery and AJAX notes
 
-  must render index page using jQuery and Active Model Serialization JSON backend
+  DONE - must render index page using jQuery and Active Model Serialization JSON backend
     -convert Services index page to implement this
 
   DONE - must render show page using jQuery and Active Model Serilaization JSON backend
     -convert Services show page to implement this
 
-  must reveal at least one has-many relationship in the JSON that is then rendered to the page.
+  DONE - must reveal at least one has-many relationship in the JSON that is then rendered to the page.
     -convert users appointment page to use this
 
   Must use your Rails API and a form to create a resource and render the response without a page refresh
