@@ -34,9 +34,8 @@ function getPrevious() {
 };
 
 function quickSubmitListener() {
-  $(".js-quick-add-submit").submit(function(event) { 
+  $(".quick-add").submit(function(event) { 
     event.preventDefault();
-    debugger
     alert("we r hack3rz");
   })
 };
