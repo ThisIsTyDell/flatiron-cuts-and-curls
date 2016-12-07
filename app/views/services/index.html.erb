@@ -22,11 +22,11 @@
 
         <h3>Quick Add:</h3>
         <%= form_for(Service.new, class: "form-horizontal") do |f| %>
-          <%= f.text_field :title, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: 'Service Name' %><br>
-          <%= f.number_field :price, class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "Price" %><br>
-          <%= f.file_field :avatar, class: " btn-main col-xs-8 col-xs-offset-2" %>
-          <%= f.collection_select(:category_id, Category.all, :id, :title, {prompt: "Please Select a Category"}, {class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "COJ"}) %><br>
-          <%= f.submit class: "btn-main col-xs-8 col-xs-offset-2" %>
+          <%= f.text_field :title, class: "input-xlarge col-xs-8", placeholder: 'Service Name' %><br>
+          <%= f.number_field :price, class: "input-xlarge col-xs-8", placeholder: "Price" %><br>
+          <%= f.file_field :avatar, class: "btn-main col-xs-8" %>
+          <%= f.collection_select(:category_id, Category.all, :id, :title, {prompt: "Please Select a Category"}, {class: "input-xlarge col-xs-8", placeholder: "COJ"}) %><br>
+          <%= f.submit class: "btn-main col-xs-8" %>
         <% end %>
       </div>
 
@@ -35,7 +35,7 @@
         <% if !params[:category_id].blank? %>
           <% @services = Service.where(category_id: params[:category_id]) %>
         <% end %>
-
+  
         <% @services.each do |service| %>
           <h3><%= service.title %> - <%= number_to_currency(service.price) %>
             <%= link_to " | Edit", edit_service_path(service) if current_user.try(:admin?) || current_user.try(:employee?) %></h3>
