@@ -5,7 +5,7 @@ function Service(attributes) {
 }
 
 Service.prototype.renderDIV = function() {
-
+  return Service.template(this);
 }
 
 $(function () {
@@ -28,7 +28,7 @@ $(function () {
       $("#serviceTitlePrice").text(service["title"] + " - " + "$" + service["price"] + ".00");
       $("#serviceDescription").text(service["description"]); */
 
-      var service = new Service(json);
+      var service = new Service(data);
 
       var serviceDiv = service.renderDIV()
 
