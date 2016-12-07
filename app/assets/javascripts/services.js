@@ -4,9 +4,6 @@ function Service(attributes) {
   this.description = attributes.description;
 }
 
-Service.templateSource = $("#entry-template").html();
-Service.template = Handlebars.compile(Service.templateSource);
-
 Service.prototype.renderDIV = function() {
 
 }
@@ -14,6 +11,10 @@ Service.prototype.renderDIV = function() {
 $(function () {
   $(".js-next").on('click', getNext);
   $(".js-previous").on('click', getPrevious);
+
+  Service.templateSource = $("#entry-template").html();
+  Service.template = Handlebars.compile(Service.templateSource);
+
   $('.quick-add').submit(function(event) { 
     event.preventDefault();
     
