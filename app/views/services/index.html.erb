@@ -21,7 +21,7 @@
         <% end %>
 
         <h3>Quick Add:</h3>
-        <%= form_for(Service.new, class: "form-horizontal") do |f| %>
+        <%= form_for(Service.new, html: { class: "new_service form-horizontal quick-add" }) do |f| %>
           <%= f.text_field :title, class: "input-xlarge col-xs-8", placeholder: 'Service Name' %><br>
           <%= f.number_field :price, class: "input-xlarge col-xs-8", placeholder: "Price" %><br>
           <%= f.file_field :avatar, class: "btn-main col-xs-8" %>
