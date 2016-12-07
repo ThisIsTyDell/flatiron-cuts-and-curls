@@ -54,7 +54,7 @@ jQuery and AJAX notes
   DONE - must reveal at least one has-many relationship in the JSON that is then rendered to the page.
     -convert users appointment page to use this
 
-  Must use your Rails API and a form to create a resource and render the response without a page refresh
+  DONE - Must use your Rails API and a form to create a resource and render the response without a page refresh
     -allow new services to be added without refreshing the page
 
   Must translate the JSON responses into Javascript Model Objects. The Model Objects must have at least one method on the prototype.
