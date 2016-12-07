@@ -30,7 +30,11 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     if @service.save
-      render json: @service, status: 201
+      if URI(request.referrer).path == new_service_path
+        redirect_to services_path
+      else
+        render json: @service, status: 201
+      end
     else
       render :new
     end
