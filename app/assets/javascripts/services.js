@@ -4,8 +4,11 @@ function Service(attributes) {
   this.description = attributes.description;
 }
 
+Service.templateSource = $("#entry-template").html();
+Service.template = Handlebars.compile(templateSource);
+
 Service.prototype.renderDIV = function() {
-  
+
 }
 
 $(function () {
