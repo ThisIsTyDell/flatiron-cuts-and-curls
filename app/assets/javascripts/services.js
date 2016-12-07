@@ -4,6 +4,14 @@ function Service(attributes) {
   this.description = attributes.description;
 }
 
+Service.formSubmit = function(event) { 
+    event.preventDefault();
+    var values = $(this).serialize();
+    var posting = $.post('/services', values);
+
+    posting.done(Service.success)
+  }
+
 Service.success = function(data){
   var service = new Service(data);
   var serviceDiv = service.renderDIV()
@@ -21,13 +29,7 @@ $(function () {
   Service.templateSource = $("#entry-template").html();
   Service.template = Handlebars.compile(Service.templateSource);
 
-  $('.quick-add').submit(function(event) { 
-    event.preventDefault();
-    var values = $(this).serialize();
-    var posting = $.post('/services', values);
-    posting.done(Service.success)
-    this.reset();
-  });
+  $('.quick-add').on("submit", Service.formSubmit);
 });
 
 function getNext() {
