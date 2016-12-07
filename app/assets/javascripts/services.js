@@ -13,6 +13,7 @@ $(function () {
       $("#serviceTitlePrice").text(service["title"] + " - " + "$" + service["price"] + ".00");
       $("#serviceDescription").text(service["description"]);
     });
+    this.reset();
   });
 });
 
