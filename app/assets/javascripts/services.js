@@ -3,7 +3,14 @@ $(function () {
   $(".js-previous").on('click', getPrevious);
   $('.quick-add').submit(function(event) { 
     event.preventDefault();
-    alert("we r hack3rz");
+    
+    var values = $(this).serialize();
+
+    var posting = $.post('/services', values);
+
+    posting.done(function(data) {
+      console.log(data);
+    })
   })
 });
 
