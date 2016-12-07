@@ -29,18 +29,14 @@
             </div>
           </div>
 
-            <div class="control-group">
-              <div class="controls">
-                <div class="row">
-                  <%= f.collection_select(:category_id, Category.all, :id, :title, {prompt: "Please Select a Category"}, {class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "COJ"}) %><br>
-                </div>
+          <div class="control-group">
+            <div class="controls">
+              <div class="row">
+                <%= f.collection_select(:category_id, Category.all, :id, :title, {prompt: "Please Select a Category"}, {class: "input-xlarge col-xs-8 col-xs-offset-2", placeholder: "COJ"}) %><br>
               </div>
             </div>
-         
-
-
-
-       
+          </div>
+    
           <div class="control-group">
             <div class="controls">
               <div class="row margin-20">
@@ -48,10 +44,8 @@
               </div>
             </div>
           </div>
-          <% end %>
+        <% end %>
         
-  
-
         <div class="control-group">
           <div class="controls">
             <div class="row">
