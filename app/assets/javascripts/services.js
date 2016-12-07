@@ -8,11 +8,21 @@ $(function () {
 
     var posting = $.post('/services', values);
 
+
     posting.done(function(data) {
-      var service = data;
+      /* var service = data;
       $("#serviceTitlePrice").text(service["title"] + " - " + "$" + service["price"] + ".00");
-      $("#serviceDescription").text(service["description"]);
+      $("#serviceDescription").text(service["description"]); */
+
+      var service = new Service(json);
+
+      var serviceDiv = service.renderDiv()
+
+      $("#serviceResult").append(serviceDiv)
+
     });
+
+
     this.reset();
   });
 });
