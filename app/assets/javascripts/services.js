@@ -5,7 +5,7 @@ function Service(attributes) {
 }
 
 Service.templateSource = $("#entry-template").html();
-Service.template = Handlebars.compile(templateSource);
+Service.template = Handlebars.compile(Service.templateSource);
 
 Service.prototype.renderDIV = function() {
 
