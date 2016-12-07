@@ -4,6 +4,10 @@ function Service(attributes) {
   this.description = attributes.description;
 }
 
+Service.prototype.renderDIV = function() {
+  
+}
+
 $(function () {
   $(".js-next").on('click', getNext);
   $(".js-previous").on('click', getPrevious);
@@ -22,7 +26,7 @@ $(function () {
 
       var service = new Service(json);
 
-      var serviceDiv = service.renderDiv()
+      var serviceDiv = service.renderDIV()
 
       $("#serviceResult").append(serviceDiv)
 
