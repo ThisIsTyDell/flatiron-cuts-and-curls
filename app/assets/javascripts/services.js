@@ -1,3 +1,9 @@
+function Service(attributes) {
+  this.title = attributes.title;
+  this.price = attributes.price;
+  this.description = attributes.description;
+}
+
 $(function () {
   $(".js-next").on('click', getNext);
   $(".js-previous").on('click', getPrevious);
