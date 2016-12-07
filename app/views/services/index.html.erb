@@ -26,7 +26,7 @@
           <%= f.number_field :price, class: "input-xlarge col-xs-8", placeholder: "Price" %><br>
           <%= f.file_field :avatar, class: "btn-main col-xs-8" %>
           <%= f.collection_select(:category_id, Category.all, :id, :title, {prompt: "Please Select a Category"}, {class: "input-xlarge col-xs-8", placeholder: "COJ"}) %><br>
-          <%= f.submit class: "btn-main col-xs-8" %>
+          <%= f.submit class: "btn-main col-xs-8", id: "js-quick-add-submit" %>
         <% end %>
       </div>
 
