@@ -4,6 +4,12 @@ function Service(attributes) {
   this.description = attributes.description;
 }
 
+Service.success = function(data){
+  var service = new Service(data);
+  var serviceDiv = service.renderDIV()
+  $("#serviceResult").append(serviceDiv)
+}
+
 Service.prototype.renderDIV = function() {
   return Service.template(this);
 }
@@ -17,26 +23,9 @@ $(function () {
 
   $('.quick-add').submit(function(event) { 
     event.preventDefault();
-    
     var values = $(this).serialize();
-
     var posting = $.post('/services', values);
-
-
-    posting.done(function(data) {
-      /* var service = data;
-      $("#serviceTitlePrice").text(service["title"] + " - " + "$" + service["price"] + ".00");
-      $("#serviceDescription").text(service["description"]); */
-
-      var service = new Service(data);
-
-      var serviceDiv = service.renderDIV()
-
-      $("#serviceResult").append(serviceDiv)
-
-    });
-
-
+    posting.done(Service.success)
     this.reset();
   });
 });
