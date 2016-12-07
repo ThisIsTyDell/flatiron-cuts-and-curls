@@ -18,11 +18,6 @@ Service.success = function(data){
   $("#serviceResult").append(serviceDiv)
 }
 
-Service.ready = function() {
-  Service.templateSource = $("#entry-template").html();
-  Service.template = Handlebars.compile(Service.templateSource);
-}
-
 Service.prototype.renderDIV = function() {
   return Service.template(this);
 }
@@ -60,5 +55,6 @@ $(function () {
   $(".js-next").on('click', getNext);
   $(".js-previous").on('click', getPrevious);
   $('.quick-add').on("submit", Service.formSubmit);
-  Service.ready();
+  Service.templateSource = $("#entry-template").html();
+  Service.template = Handlebars.compile(Service.templateSource);
 });
