@@ -24,20 +24,16 @@ class ServicesController < ApplicationController
     end
   end
 
-  def new
-    @service = Service.new(category_id: params[:category_id])
-  end
+  # def new
+  #   @service = Service.new(category_id: params[:category_id])
+  # end
 
   def create
     @service = Service.new(service_params)
     if @service.save
-      if URI(request.referrer).path == new_service_path
-        redirect_to services_path
-      else
-        render json: @service, status: 201
-      end
+      render json: @service, status: 201
     else
-      render :new
+      render json: { errors: @service.errors.full_messages }
     end
   end
 
