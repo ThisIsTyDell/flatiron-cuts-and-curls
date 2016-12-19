@@ -4,6 +4,7 @@ $(function () {
 
 var userId
 var contentId
+var appointmentText
 
 function getAppointments() {
   event.preventDefault();
@@ -13,10 +14,10 @@ function getAppointments() {
   if($(contentClassId).length)
     $(contentClassId).toggle();
   else
-    $.get("/users/" + userId + "/appointments.json", handleData)
+    $.get("/users/" + userId + "/appointments.json", generateList)
 };
 
-function handleData(data) {
+function generateList(data) {
   var appointments = data
   var services = []
 
@@ -25,16 +26,19 @@ function handleData(data) {
     var paid = "<p>Paid: " + appointment.paid + "</p>"
     var total = "<p>Total: $" + appointment.total_price_paid + ".00</p>"
 
-    var appointmentText = "<li class='added-content-" + userId + "'>" + time + paid + total + services.join(' - ') + "</li>"
+    appointmentText = "<li class='added-content-" + userId + "'>" + time + paid + total + services.join(' - ') + "</li>"
     
     appointment.services.forEach(function(service) {
       services.push(service.title)
     });
 
-    $("#user-" + userId + "-appointments").append(appointmentText)
+    showAppointments();
   });
 };
 
+function showAppointments() {
+  $("#user-" + userId + "-appointments").append(appointmentText)
+}
 
 
 
