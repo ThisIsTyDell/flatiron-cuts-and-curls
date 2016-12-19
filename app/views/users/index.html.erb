@@ -15,7 +15,11 @@
       <% @users.each do |user| %>
         <div class="col-md-6">
           <h4 class="dark-gray"><b><%= user.name %></b> - <%= user.email%></h4>
-          <a href="#" class="js-view-appt" data-id="<%= user.id %>">View Appointments</a>
+          <% if !user.appointments.empty? %>
+            <a href="#" class="js-view-appt" data-id="<%= user.id %>">View Appointments</a>
+          <% else %>
+            <p>No Appointments Scheduled</p>
+          <% end %>
           <ul id="user-<%= user.id %>-appointments">
           </ul>
         </div>
