@@ -2,19 +2,21 @@ $(function () {
   $(".js-view-appt").on('click', getAppointments);
 });
 
-var userId
-var contentId
-var appointmentText
+var userId 
+var contentId 
+var appointmentText 
 
 function getAppointments() {
   event.preventDefault();
   userId = parseInt(this.attributes[2].value);
   contentClassId = ".added-content-" + userId
-
-  if($(contentClassId).length)
+ 
+  if ($(contentClassId).length) {
     $(contentClassId).toggle();
-  else
+  } else {
     $.get("/users/" + userId + "/appointments.json", generateList)
+  }
+    
 };
 
 function generateList(data) {
