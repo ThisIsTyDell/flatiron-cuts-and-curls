@@ -1,6 +1,6 @@
 function Service(attributes) {
   this.title = attributes.title;
-  this.price = attributes.price;
+  this.price = '$' + attributes.price + '.00';
   this.description = attributes.description;
 }
 

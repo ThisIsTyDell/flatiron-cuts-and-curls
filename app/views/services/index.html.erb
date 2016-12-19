@@ -21,15 +21,18 @@
 
         <h3>Add Service </h3>
           <%= form_tag('/services', class: "new_service form-horizontal quick-add") do %>
+            <label>Name</label><br>
             <%= text_field_tag "service[title]" %><br>
+            <label>Description</label><br>
             <%= text_area_tag "service[description]" %><br>
+            <label>Price</label><br>
             <%= number_field_tag "service[price]" %><br>
+            <label>Image</label><br>
             <%= file_field_tag "service[avatar]" %><br>
+            <label>Category</label><br>
             <%= select_tag "service[category_id]", options_from_collection_for_select(Category.all, "id", "title") %><br>
             <%= submit_tag "Submit", class: "btn-main col-xs-8" %>
           <% end %> 
-      
-
       </div>
 
       <div class="col-md-9 margin-50">
@@ -40,7 +43,7 @@
         <% end %>
   
         <% @services.each do |service| %>
-          <h3><%= service.title %> - <%= number_to_currency(service.price) %>
+          <h3><%= link_to service.title, service_path(service) %> - <%= number_to_currency(service.price) %>
             <%= link_to " | Edit", edit_service_path(service) if current_user.try(:admin?) || current_user.try(:employee?) %></h3>
             <%= image_tag service.avatar.url %>
           <p class="white"><%= link_to "See all #{service.category.title}", category_services_path(service.category) %></p>
