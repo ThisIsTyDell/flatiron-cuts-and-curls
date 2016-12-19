@@ -16,6 +16,7 @@ Service.success = function(data){
   var service = new Service(data);
   var serviceDiv = service.renderDIV()
   $("#serviceResult").append(serviceDiv)
+
 }
 
 Service.ready = function() {

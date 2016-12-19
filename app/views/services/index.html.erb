@@ -12,14 +12,23 @@
   <div class="container">
     <div class="row">
 
-      <%= render partial: 'form', locals: {service: @service} %>
-      
       <div class="col-md-3 margin-50">
         <h3>Category:</h3>
         <%= form_tag("/services", method: "get") do %>
           <%= select_tag "category_id", content_tag(:option,'All Styles',:value=>" ") + options_from_collection_for_select(Category.all, "id", "title") %>
           <%= submit_tag "Filter", class: "btn-main" %>
         <% end %>
+
+        <h3>Add Service </h3>
+          <%= form_tag('/services', class: "new_service form-horizontal quick-add") do %>
+            <%= text_field_tag "service[title]" %><br>
+            <%= text_area_tag "service[description]" %><br>
+            <%= number_field_tag "service[price]" %><br>
+            <%= file_field_tag "service[avatar]" %><br>
+            <%= select_tag "service[category_id]", options_from_collection_for_select(Category.all, "id", "title") %><br>
+            <%= submit_tag "Submit", class: "btn-main col-xs-8" %>
+          <% end %> 
+      
 
       </div>
 
