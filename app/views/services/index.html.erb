@@ -13,6 +13,8 @@
   <div class="container">
     <div class="row">
 
+      <%= render partial: 'form', locals: {service: @service} %>
+      
       <div class="col-md-3 margin-50">
         <h3>Category:</h3>
         <%= form_tag("/services", method: "get") do %>
@@ -20,14 +22,6 @@
           <%= submit_tag "Filter", class: "btn-main" %>
         <% end %>
 
-        <h3>Quick Add:</h3>
-        <%= form_for(@service, html: { class: "new_service form-horizontal quick-add" }) do |f| %>
-          <%= f.text_field :title, class: "input-xlarge col-xs-8", placeholder: 'Service Name' %><br>
-          <%= f.number_field :price, class: "input-xlarge col-xs-8", placeholder: "Price" %><br>
-          <%= f.file_field :avatar, class: "btn-main col-xs-8" %>
-          <%= f.collection_select(:category_id, Category.all, :id, :title, {prompt: "Please Select a Category"}, {class: "input-xlarge col-xs-8", placeholder: "COJ"}) %><br>
-          <%= f.submit class: "btn-main col-xs-8" %>
-        <% end %>
       </div>
 
       <div class="col-md-9 margin-50">
