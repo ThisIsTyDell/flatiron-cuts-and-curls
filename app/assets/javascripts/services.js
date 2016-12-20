@@ -2,13 +2,14 @@ function Service(attributes) {
   this.title = attributes.title;
   this.price = '$' + attributes.price + '.00';
   this.description = attributes.description;
+  this.id = attributes.id;
 }
 
 Service.formSubmit = function(event) { 
   event.preventDefault();
   var values = $(this).serialize();
   var posting = $.post('/services', values);
-  
+
   posting.done(Service.success)
 }
 
