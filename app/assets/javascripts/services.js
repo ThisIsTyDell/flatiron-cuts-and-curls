@@ -60,6 +60,6 @@ function getPrevious() {
 $(function () {
   $(".js-next").on('click', getNext);
   $(".js-previous").on('click', getPrevious);
-  $('.quick-add').on("submit", Service.formSubmit);
+  $(".quick-add").on("submit", Service.formSubmit);
   Service.ready();
 });
