@@ -3,6 +3,7 @@ function Service(attributes) {
   this.price = '$' + attributes.price + '.00';
   this.description = attributes.description;
   this.id = attributes.id;
+  debugger
 }
 
 Service.formSubmit = function(event) { 
@@ -16,6 +17,7 @@ Service.formSubmit = function(event) {
 Service.success = function(data){
   var service = new Service(data);
   var serviceDiv = service.renderDIV()
+  debugger
   $("#serviceResult").append(serviceDiv)
   $(":submit").removeAttr("disabled")
 }
@@ -61,6 +63,6 @@ function getPrevious() {
 $(function () {
   $(".js-next").on('click', getNext);
   $(".js-previous").on('click', getPrevious);
-  $(".quick-add").on("submit", Service.formSubmit);
+  $('.quick-add').on("submit", Service.formSubmit);
   Service.ready();
 });

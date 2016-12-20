@@ -20,18 +20,18 @@
         <% end %>
 
         <h3>Add Service </h3>
-          <%= form_tag('/services', class: "new_service form-horizontal quick-add") do %>
+          <%= form_for(@service, html: { class: "new_service form-horizontal quick-add"}) do |f| %>
             <label>Name</label><br>
-            <%= text_field_tag "service[title]" %><br>
+            <%= f.text_field :title %><br>
             <label>Description</label><br>
-            <%= text_area_tag "service[description]" %><br>
+            <%= f.text_area :description %><br>
             <label>Price</label><br>
-            <%= number_field_tag "service[price]" %><br>
+            <%= f.number_field :price %><br>
             <label>Image</label><br>
-            <%= file_field_tag "service[avatar]" %><br>
+            <%= f.file_field :avatar %><br>
             <label>Category</label><br>
-            <%= select_tag "service[category_id]", options_from_collection_for_select(Category.all, "id", "title") %><br>
-            <%= submit_tag "Submit", class: "btn-main col-xs-8" %>
+            <%= f.collection_select(:category_id, Category.all, :id, :title) %><br>
+            <%= f.submit :submit, class: "btn-main col-xs-8" %>
           <% end %> 
       </div>
 
@@ -66,6 +66,7 @@
 <script id="entry-template" type="text/x-handlebars-template">
   <div class="entry">
     <h3><a href="/services/{{id}}">{{title}}</a> - {{price}} | <a href="/services/{{id}}/edit">Edit</a></h3>
-    <p>{{description}}</p>
+    <
+    <p class="white">{{description}}</p>
   </div>
 </script>
