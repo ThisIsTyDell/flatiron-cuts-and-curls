@@ -5,18 +5,18 @@ function Service(attributes) {
 }
 
 Service.formSubmit = function(event) { 
-    event.preventDefault();
-    var values = $(this).serialize();
-    var posting = $.post('/services', values);
-
-    posting.done(Service.success)
-  }
+  event.preventDefault();
+  var values = $(this).serialize();
+  var posting = $.post('/services', values);
+  
+  posting.done(Service.success)
+}
 
 Service.success = function(data){
   var service = new Service(data);
   var serviceDiv = service.renderDIV()
   $("#serviceResult").append(serviceDiv)
-
+  $(":submit").removeAttr("disabled")
 }
 
 Service.ready = function() {
