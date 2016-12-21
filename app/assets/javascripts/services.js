@@ -5,12 +5,31 @@ function Service(attributes) {
   this.id = attributes.id;
 }
 
+Service.validateText = function(id) {
+  var div = $("#"+id).closest("div");
+  if($("#"+id).val() == null || $("#"+id).val()=="") {
+    div.addClass("has-error");
+    return false;
+  } else {
+    div.removeClass("has-error");
+    return true;
+  }
+}
+
 Service.formSubmit = function(event) { 
   event.preventDefault();
-  var values = $(this).serialize();
-  var posting = $.post('/services', values);
-  posting.done(Service.success)
-}
+  if(!Service.validateText("title")) {
+    return false;
+  } 
+  if(!Service.validateText("description")) {
+    return false;
+  }
+  if(!Service.validateText("price")) {
+    return false;
+  } var values = $(this).serialize();
+    var posting = $.post('/services', values);
+    posting.done(Service.success)
+};
 
 Service.success = function(data){
   var service = new Service(data);
@@ -60,6 +79,6 @@ function getPrevious() {
 $(function () {
   $(".js-next").on('click', getNext);
   $(".js-previous").on('click', getPrevious);
-  $('.quick-add').on("submit", Service.formSubmit);
+  $(".quick-add").on("submit", Service.formSubmit);
   Service.ready();
-});
+})
