@@ -22,14 +22,17 @@
         <h3>Add Service </h3>
           <%= form_for(@service, html: { class: "new_service form-horizontal quick-add", id: "new-service-form"}) do |f| %>
             <div class="form-group">
+              <div class="alert alert-error" style="display:none">Please enter a name</div>
               <label>Name</label><br>
               <%= f.text_field :title, id: "title" %><br>
             </div>
             <div class="form-group">
+              <div class="alert alert-error" style="display:none">Please enter a description</div>
               <label>Description</label><br>
               <%= f.text_area :description, id: "description" %><br>
             </div>
             <div class="form-group">
+              <div class="alert alert-error" style="display:none">Please enter a price</div>
               <label>Price</label><br>
               <%= f.number_field :price, id: "price" %><br>
             </div>
