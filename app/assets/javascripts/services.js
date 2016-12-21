@@ -9,7 +9,6 @@ Service.formSubmit = function(event) {
   event.preventDefault();
   var values = $(this).serialize();
   var posting = $.post('/services', values);
-  debugger
   posting.done(Service.success)
 }
 
