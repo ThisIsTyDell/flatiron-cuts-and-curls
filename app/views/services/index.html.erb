@@ -27,8 +27,6 @@
             <%= f.text_area :description %><br>
             <label>Price</label><br>
             <%= f.number_field :price %><br>
-            <label>Image</label><br>
-            <%= f.file_field :avatar %><br>
             <label>Category</label><br>
             <%= f.collection_select(:category_id, Category.all, :id, :title) %><br>
             <%= f.submit :submit, class: "btn-main col-xs-8" %>
@@ -45,7 +43,7 @@
         <% @services.each do |service| %>
           <h3><%= link_to service.title, service_path(service) %> - <%= number_to_currency(service.price) %>
             <%= link_to " | Edit", edit_service_path(service) if current_user.try(:admin?) || current_user.try(:employee?) %></h3>
-            <%= image_tag service.avatar.url %>
+
           <p class="white"><%= link_to "See all #{service.category.title}", category_services_path(service.category) %></p>
           <p class="white"><%= service.description %></p>
         <% end %>
@@ -66,7 +64,6 @@
 <script id="entry-template" type="text/x-handlebars-template">
   <div class="entry">
     <h3><a href="/services/{{id}}">{{title}}</a> - {{price}} | <a href="/services/{{id}}/edit">Edit</a></h3>
-    <
     <p class="white">{{description}}</p>
   </div>
 </script>
