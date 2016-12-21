@@ -6,12 +6,13 @@ function Service(attributes) {
 }
 
 Service.validateText = function(id) {
-  var div = $("#"+id).closest("div");
+  var div = $("#"+id).siblings("div");
+  debugger
   if($("#"+id).val() == null || $("#"+id).val()=="") {
-    div.addClass("has-error");
+    div.show();
     return false;
   } else {
-    div.removeClass("has-error");
+    div.hide();
     return true;
   }
 }
