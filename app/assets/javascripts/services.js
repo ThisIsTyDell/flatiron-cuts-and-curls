@@ -3,21 +3,19 @@ function Service(attributes) {
   this.price = '$' + attributes.price + '.00';
   this.description = attributes.description;
   this.id = attributes.id;
-  debugger
 }
 
 Service.formSubmit = function(event) { 
   event.preventDefault();
   var values = $(this).serialize();
   var posting = $.post('/services', values);
-
+  debugger
   posting.done(Service.success)
 }
 
 Service.success = function(data){
   var service = new Service(data);
   var serviceDiv = service.renderDIV()
-  debugger
   $("#serviceResult").append(serviceDiv)
   $(":submit").removeAttr("disabled")
 }
