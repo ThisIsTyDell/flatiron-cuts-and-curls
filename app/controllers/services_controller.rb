@@ -24,10 +24,6 @@ class ServicesController < ApplicationController
     end
   end
 
-  # def new
-  #   @service = Service.new(category_id: params[:category_id])
-  # end
-
   def create
     @service = Service.new(service_params)
     if @service.save
