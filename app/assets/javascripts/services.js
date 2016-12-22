@@ -7,7 +7,6 @@ function Service(attributes) {
 
 Service.validateText = function(id) {
   var div = $("#"+id).siblings("div");
-  debugger
   if($("#"+id).val() == null || $("#"+id).val()=="") {
     div.show();
     return false;
